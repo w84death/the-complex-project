@@ -399,7 +399,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The Complex Project"
-run/main_scene="res://materials/main.tscn"
+run/main_scene="res://vendors/p1x/intro/intro.tscn"
 config/icon="res://icon.png"
 
 [debug]

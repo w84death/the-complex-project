@@ -8,7 +8,7 @@
 
 [node name="intro" type="Spatial"]
 script = ExtResource( 1 )
-next_scene_bigfile = "scenes/big/menu"
+next_scene_bigfile = "main"
 
 [node name="main" type="AnimationPlayer" parent="."]
 autoplay = "intro"
@@ -24,7 +24,7 @@ __meta__ = {
 }
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 1280, 720 )
+size = Vector2( 888, 480 )
 handle_input_locally = false
 msaa = 2
 hdr = false
@@ -38,7 +38,7 @@ light_bake_mode = 2
 [node name="camera" parent="ViewportContainer/Viewport" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 environment = ExtResource( 4 )
-fov = 110.0
+fov = 90.0
 
 [node name="P1X" parent="ViewportContainer/Viewport/camera" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )

@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/simple_fpsplayer/Player.gd" type="Script" id=1]
 [ext_resource path="res://vendors/p1x/camera_3d_effects/camera.tscn" type="PackedScene" id=2]
 
-
 [sub_resource type="CapsuleShape" id=1]
 height = 2.0
 
@@ -24,11 +23,11 @@ fov = 90.0
 [node name="Flashlight" type="SpotLight" parent="rotation_helper"]
 transform = Transform( 0.999071, 2.32614e-10, 0.0430965, 0.00365943, 0.996388, -0.0848337, -0.0429408, 0.0849126, 0.995463, 0.812353, -0.0598464, -1.14064 )
 light_color = Color( 1, 0.980392, 0.815686, 1 )
-light_energy = 3.0
+light_energy = 24.0
 light_bake_mode = 0
 shadow_enabled = true
-spot_range = 76.3722
-spot_angle = 28.8583
+spot_range = 128.0
+spot_angle = 48.0
 
 [node name="playerfeet" type="RayCast" parent="."]
 enabled = true
