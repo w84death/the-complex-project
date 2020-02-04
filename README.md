@@ -1,5 +1,5 @@
 # The Complex Project
-![Game screenshot](media/game.png)
+![Game screenshot](media/the_complex_project.png)
 
 
 TrenchBroom + Qodot + Godot
