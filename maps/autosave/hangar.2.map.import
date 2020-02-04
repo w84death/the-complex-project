@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/hangar.2.map-1c6273a27f9ac0852b489312aac85b5b.tres"
+
+[deps]
+
+source_file="res://maps/autosave/hangar.2.map"
+dest_files=[ "res://.import/hangar.2.map-1c6273a27f9ac0852b489312aac85b5b.tres" ]
+
+[params]
+

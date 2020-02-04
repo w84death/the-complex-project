@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://vendors/p1x/intro/p1x_logo.material" type="Material" id=1]
+
+
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 0.1, 2.2, 0.1 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.4, 0.1, 0.1 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.1, 1.2, 0.1 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 0.1, 0.8, 0.1 )
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 0.1, 1.1, 0.1 )
+
+[node name="P1X" type="Position3D"]
+
+[node name="P" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+
+[node name="top" type="MeshInstance" parent="P"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.05, 0 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="middle" type="MeshInstance" parent="P"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.05, 0 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="right" type="MeshInstance" parent="P"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0 )
+use_in_baked_light = true
+mesh = SubResource( 3 )
+material/0 = ExtResource( 1 )
+
+[node name="1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+
+[node name="pixel" type="MeshInstance" parent="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.95, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="X" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.7, 0 )
+use_in_baked_light = true
+mesh = SubResource( 5 )
+material/0 = ExtResource( 1 )
+
+[node name="top_right" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0 )
+use_in_baked_light = true
+mesh = SubResource( 5 )
+material/0 = ExtResource( 1 )
+
+[node name="bottom_left" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = ExtResource( 1 )
+
+[node name="bottom_right" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -1.25, 0 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = ExtResource( 1 )
+
+[node name="pixel" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.45, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="pixel2" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.65, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="pixel3" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.45, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="pixel4" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.65, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )
+
+[node name="pixel5" type="MeshInstance" parent="X"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.55, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 1 )

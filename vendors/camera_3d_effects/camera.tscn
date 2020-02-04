@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://vendors/camera_3d_effects/camera_effects.material" type="Material" id=1]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 2.39, 1 )
+
+[node name="camera_3d_effects" type="Camera"]
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0 )
+current = true
+fov = 80.0
+far = 4096.0
+
+[node name="effects" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 4.65661e-10, 1, 0, 0, 1.49012e-08, 1, 0, 0, -0.5 )
+cast_shadow = 0
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )

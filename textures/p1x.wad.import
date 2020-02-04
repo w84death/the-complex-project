@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.wad"
+type="Resource"
+path="res://.import/p1x.wad-f5c733a9b7ce1e2afd36e6d76954afbf.tres"
+
+[deps]
+
+source_file="res://textures/p1x.wad"
+dest_files=[ "res://.import/p1x.wad-f5c733a9b7ce1e2afd36e6d76954afbf.tres" ]
+
+[params]
+
+palette_file="res://addons/qodot/palette.lmp"

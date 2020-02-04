@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://vendors/p1x/intro/intro.gd" type="Script" id=1]
+[ext_resource path="res://vendors/p1x/intro/intro.anim" type="Animation" id=2]
+[ext_resource path="res://vendors/p1x/camera_3d_effects/camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://vendors/p1x/intro/flat_blue_halo_env.tres" type="Environment" id=4]
+[ext_resource path="res://vendors/p1x/intro/P1X.tscn" type="PackedScene" id=5]
+
+[node name="intro" type="Spatial"]
+script = ExtResource( 1 )
+next_scene_bigfile = "scenes/big/menu"
+
+[node name="main" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+anims/intro = ExtResource( 2 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1280, 720 )
+handle_input_locally = false
+msaa = 2
+hdr = false
+render_target_update_mode = 3
+
+[node name="sun" type="DirectionalLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.943327, 0.0847343, -0.320865, 0, 0.966855, 0.255328, 0.331865, -0.240857, 0.91206, 0, 7, 0 )
+light_color = Color( 0.984314, 1, 0.839216, 1 )
+light_bake_mode = 2
+
+[node name="camera" parent="ViewportContainer/Viewport" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+environment = ExtResource( 4 )
+fov = 110.0
+
+[node name="P1X" parent="ViewportContainer/Viewport/camera" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+
+[node name="SpotLight" type="SpotLight" parent="ViewportContainer/Viewport/camera"]
+transform = Transform( 0.937222, 0, -0.348734, -0.100158, 0.957869, -0.269175, 0.334041, 0.287205, 0.897736, -0.734812, -0.789447, 0 )
+light_color = Color( 0.180392, 0.392157, 0.478431, 1 )
+spot_range = 7.55768
+spot_angle = 45.2393
