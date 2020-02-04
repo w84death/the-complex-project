@@ -47,3 +47,7 @@ func instrucion_hide():
 
 func _on_instruction_finished():
 	self.instrucion_hide()
+
+
+func _on_Button_pressed():
+	self.next_scene()

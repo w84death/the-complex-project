@@ -8,7 +8,7 @@
 
 [node name="intro" type="Spatial"]
 script = ExtResource( 1 )
-next_scene_bigfile = "main"
+next_scene_bigfile = "demo"
 
 [node name="main" type="AnimationPlayer" parent="."]
 autoplay = "intro"
