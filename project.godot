@@ -408,6 +408,7 @@ config/icon="res://icon.png"
 
 window/size/width=888
 window/size/height=480
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

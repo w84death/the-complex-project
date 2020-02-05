@@ -2,7 +2,10 @@ extends Node
 
 var player = preload("res://assets/simple_fpsplayer/Player.tscn")
 var player_dummy = preload("res://assets/simple_fpsplayer/PlayerDummy.tscn")
-export var websocket_url = "ws://192.168.1.120:9666"
+export var websocket_url = "ws://p1x.in:9666"
+var player_node
+var player_last_pos 
+var my_id = 0
 
 var _client = WebSocketClient.new()
 
@@ -17,21 +20,48 @@ func _closed(was_clean = false):
 	set_process(false)
 
 func _connected(proto = ""):
-	lprint("Connected")
+	lprint("Joining..")
+	$GUI/info/info/HBoxContainer/btn_connect.hide()
 	var payload = 'JOIN'
 	_client.get_peer(1).put_packet(payload.to_utf8())
-	
+
+func connect_to_server():
+	lprint("Connecting to " + str(websocket_url))
+	lprint("Connecting to " + str(websocket_url))
+	var err = _client.connect_to_url(websocket_url)
+	if err != OK:
+		lprint("Unable to connect")
+		set_process(false)
+	else:
+		lprint("Connection established.")
+		
 func _on_data():
 	var response = _client.get_peer(1).get_packet().get_string_from_utf8().split("/", true)
 	lprint("Got data from server: " + str(response[0]))
 	
 	if response[0] == "YOUR_ID":
 		print(response[1])
-		spawn_player()
+		$GUI/info/info/HBoxContainer/id.set_text(str(response[1]))
+		my_id = response[1]
+		spawn_player(response[1])
 	
-	if response[0] == "POS":
-		lprint("%s new position: %s" % [response[1], response[2]])
+	if response[0] == "NEW_JOIN":
+		if response[1] != my_id:
+			spawn_player_dummy(response[1])
+			lprint("%s joined" % [response[1]])
 
+	if response[0] == "POS":
+		var parse_pos = response[2].split(',')
+		var new_pos = Vector3(parse_pos[0],parse_pos[1],parse_pos[2])
+		for p_node in $players.get_children():
+			if p_node.multiplayer_id == response[1]:
+				p_node.translation = new_pos
+		
+	if response[0] == "DIS":
+		for p_node in $players.get_children():
+			if p_node.multiplayer_id == response[1]:
+				$players.remove_child(p_node)
+		lprint("%s disconnected" % [response[1]])
 		
 func lprint(message):
 	print(message)
@@ -43,23 +73,29 @@ func _process(delta):
 func _exit_tree():
 	_client.disconnect_from_host()
 
-func _on_btn_test_pressed():
-	var payload = 'POS/%s' % [Vector3(1,2,3)]
+func emit_position():
+	var payload = 'POS/%s,%s,%s' % [player_node.translation.x, player_node.translation.y, player_node.translation.z]
 	_client.get_peer(1).put_packet(payload.to_utf8())
+	player_last_pos = player_node.translation
 
 func _on_btn_connect_pressed():
-		# Initiate connection to the given URL.
-	var err = _client.connect_to_url(websocket_url)
-	if err != OK:
-		lprint("Unable to connect")
-		set_process(false)
-	else:
-		lprint("connecting to " + str(websocket_url))
-		var payload = 'JOIN'
-		_client.get_peer(1).put_packet(payload.to_utf8())
+	connect_to_server()
 	
-func spawn_player():
-	var new_player = player.instance()
-	new_player.translation = $hangar/start.translation
-	new_player.get_node("rotation_helper/camera").make_current()
-	$hangar.add_child(new_player)
+func spawn_player(id):
+	player_node = player.instance()
+	player_node.translation = $hangar/start.translation
+	player_last_pos = player_node.translation
+	player_node.get_node("rotation_helper/camera").make_current()
+	player_node.multiplayer_id = id
+	add_child(player_node)
+	$tick.start()
+	
+func spawn_player_dummy(id):
+	var player_new = player_dummy.instance()
+	player_new.translation = $hangar/start.translation
+	player_new.multiplayer_id = id
+	$players.add_child(player_new)
+
+func _on_tick_timeout():
+	if player_last_pos != player_node.translation:
+		emit_position()

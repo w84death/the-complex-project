@@ -57,19 +57,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn_test" type="Button" parent="Client/GUI/info/info/HBoxContainer"]
-margin_left = 69.0
-margin_right = 110.0
-margin_bottom = 48.0
-text = "test"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="id" type="Label" parent="Client/GUI/info/info/HBoxContainer"]
-margin_left = 114.0
+margin_left = 69.0
 margin_top = 16.0
-margin_right = 155.0
+margin_right = 110.0
 margin_bottom = 31.0
 text = "00000"
 
@@ -90,6 +81,10 @@ margin_left = 12.0
 margin_top = 12.0
 margin_right = -12.0
 margin_bottom = -12.0
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="center" type="Control" parent="Client/GUI"]
 anchor_left = 0.5
@@ -113,5 +108,10 @@ transform = Transform( -0.793598, -0.38613, 0.470218, -0.00523557, 0.777128, 0.6
 
 [node name="start" type="Position3D" parent="Client/hangar"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.23785, 0 )
+
+[node name="tick" type="Timer" parent="Client"]
+wait_time = 0.033
+
+[node name="players" type="Node" parent="Client"]
 [connection signal="pressed" from="Client/GUI/info/info/HBoxContainer/btn_connect" to="Client" method="_on_btn_connect_pressed"]
-[connection signal="pressed" from="Client/GUI/info/info/HBoxContainer/btn_test" to="Client" method="_on_btn_test_pressed"]
+[connection signal="timeout" from="Client/tick" to="Client" method="_on_tick_timeout"]

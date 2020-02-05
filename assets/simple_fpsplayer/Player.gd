@@ -2,6 +2,7 @@ extends KinematicBody
 #Variables
 var global = "root/global"
 var bomb = preload("res://models/bombs/underwater_mine.tscn")
+var multiplayer_id = 0
 
 var is_player = true
 const GRAVITY = -64.8
