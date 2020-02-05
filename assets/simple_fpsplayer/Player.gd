@@ -1,7 +1,9 @@
 extends KinematicBody
 #Variables
 var global = "root/global"
+var bomb = preload("res://models/bombs/underwater_mine.tscn")
 
+var is_player = true
 const GRAVITY = -64.8
 var vel = Vector3()
 const MAX_SPEED = 24
@@ -15,6 +17,7 @@ const MAX_SLOPE_ANGLE = 40
 
 var camera
 var rotation_helper
+var raycast
 
 var MOUSE_SENSITIVITY = 0.1
 const MOUSE_INVERSION = -1
@@ -22,6 +25,8 @@ const MOUSE_INVERSION = -1
 const MAX_SPRINT_SPEED = 20
 const SPRINT_ACCEL = 18
 var is_sprinting = false
+var WEAPON_COOLDOWN_TIME = 1
+var WEAPON_COOL = true
 
 var flashlight
 
@@ -36,9 +41,13 @@ func _ready():
 func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
-
+	for i in get_slide_count():
+		var collision  = get_slide_collision(i)
+		if collision.collider.is_in_group("bomb"): 
+			print("bum")
+			collision.collider.explode()
+		
 func process_input(delta):
-
 	# ----------------------------------
 	# Walking
 	dir = Vector3()
@@ -54,6 +63,9 @@ func process_input(delta):
 		input_movement_vector.x -= 1
 	if Input.is_action_pressed("movement_right"):
 		input_movement_vector.x += 1
+	
+	if Input.is_action_pressed("shoot"):
+		shoot()
 
 	input_movement_vector = input_movement_vector.normalized()
 
@@ -110,7 +122,7 @@ func process_movement(delta):
 	vel.x = hvel.x
 	vel.z = hvel.z
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
-
+	
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * MOUSE_INVERSION))
@@ -119,4 +131,15 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
 		rotation_helper.rotation_degrees = camera_rot
+		
+func shoot():
+	if WEAPON_COOL:
+		var new_bomb = bomb.instance()
+		new_bomb.translation = translation
+		$'../hangar'.add_child(new_bomb)
+		WEAPON_COOL = false
+		$weapon_cooldown.wait_time = WEAPON_COOLDOWN_TIME
+		$weapon_cooldown.start()
 
+func _on_weapon_cooldown_timeout():
+	WEAPON_COOL = true

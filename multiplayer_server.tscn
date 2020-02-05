@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://materials/theme.tres" type="Theme" id=3]
+[ext_resource path="res://vendors/p1x/camera_3d_effects/camera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://vendors/print_fps/fps.tscn" type="PackedScene" id=5]
+[ext_resource path="res://server.gd" type="Script" id=6]
+
+[node name="multiplayer_server" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="server" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="GUI" type="Control" parent="server"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fps" parent="server/GUI" instance=ExtResource( 5 )]
+
+[node name="panels" type="HBoxContainer" parent="server/GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 64.0
+margin_right = -24.0
+margin_bottom = -24.0
+custom_constants/separation = 24
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logs" type="Panel" parent="server/GUI/panels"]
+margin_left = 28.0
+margin_right = 628.0
+margin_bottom = 392.0
+rect_min_size = Vector2( 600, 0 )
+
+[node name="log" type="RichTextLabel" parent="server/GUI/panels/logs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info" type="Panel" parent="server/GUI/panels"]
+margin_left = 652.0
+margin_right = 812.0
+margin_bottom = 392.0
+rect_min_size = Vector2( 160, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="players" type="RichTextLabel" parent="server/GUI/panels/info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="server/GUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_top = 32.0
+margin_bottom = 32.0
+
+[node name="Panel" type="Panel" parent="server/GUI/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -92.5
+margin_top = -17.5
+margin_right = 92.5
+margin_bottom = 17.5
+
+[node name="Label" type="Label" parent="server/GUI/Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "GAME SERVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cameras" type="Spatial" parent="."]
+visible = false
+
+[node name="camera1" parent="cameras" instance=ExtResource( 4 )]
+transform = Transform( -0.793598, -0.38613, 0.470218, -0.00523557, 0.777128, 0.62932, -0.608419, 0.496966, -0.618749, 7.06996, 21.6067, -28.6293 )

@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://materials/light.material" type="Material" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+height = 2.0
+
+[sub_resource type="CapsuleMesh" id=2]
+material = ExtResource( 1 )
+mid_height = 2.0
+radial_segments = 32
+
+[node name="PlayerDummy" type="KinematicBody"]
+
+[node name="collision_body" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="rotation_helper" type="Spatial" parent="."]
+
+[node name="Flashlight" type="SpotLight" parent="rotation_helper"]
+transform = Transform( 0.999071, 2.55876e-09, 0.0430964, 0.00365943, 0.996388, -0.0848337, -0.0429408, 0.0849126, 0.995463, 0.812353, 0.38862, -1.01901 )
+visible = false
+light_color = Color( 1, 0.980392, 0.815686, 1 )
+light_energy = 24.0
+light_bake_mode = 0
+shadow_enabled = true
+spot_range = 128.0
+spot_angle = 48.0
+
+[node name="body" type="MeshInstance" parent="rotation_helper"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null

@@ -8,7 +8,17 @@ margin_top = 24.0
 margin_right = 40.0
 margin_bottom = 24.0
 
-[node name="counter" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="."]
+margin_left = -34.0
+margin_top = -14.0
+margin_right = 38.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="counter" type="Label" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

@@ -1,13 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://vendors/print_fps/fps.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/hangar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://materials/theme.tres" type="Theme" id=4]
+[ext_resource path="res://models/bombs/underwater_mine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://textures/logo.png" type="Texture" id=9]
 [ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://textures/aim.png" type="Texture" id=14]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("center/logo:visible")
@@ -57,9 +59,14 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 4, 0
 [node name="GUI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="gui_anim" type="AnimationPlayer" parent="GUI"]
+autoplay = "intro"
+anims/intro = SubResource( 1 )
 
 [node name="fps" parent="GUI" instance=ExtResource( 2 )]
 
@@ -71,15 +78,31 @@ margin_top = 24.0
 margin_right = -40.0
 margin_bottom = 24.0
 
-[node name="about" type="Label" parent="GUI/info"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -74.0
-margin_bottom = 48.0
-text = "888x480
-MSAA 8x
-GLES3"
+[node name="Panel" type="Panel" parent="GUI/info"]
+margin_left = -281.0
+margin_top = -8.0
+margin_right = 19.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 48 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Label" parent="GUI/info/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -16.5
+margin_right = 135.0
+margin_bottom = 16.5
+text = "888x480 / GLES3 / MSAA 8x / GI / SOAA
+Godot + Qodot + TrenchBroom"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="center" type="Control" parent="GUI"]
 anchor_left = 0.5
@@ -91,17 +114,57 @@ __meta__ = {
 }
 
 [node name="logo" type="Sprite" parent="GUI/center"]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -444, -240 )
 texture = ExtResource( 9 )
 centered = false
 
 [node name="aim" type="Sprite" parent="GUI/center"]
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 14 )
 
-[node name="gui_anim" type="AnimationPlayer" parent="GUI"]
-autoplay = "intro"
-anims/intro = SubResource( 6 )
+[node name="help" type="Control" parent="GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -16.0
+margin_right = -24.0
+margin_bottom = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="GUI/help"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -64.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="keys" type="Label" parent="GUI/help/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -58.5
+margin_top = -25.5
+margin_right = 58.5
+margin_bottom = 25.5
+text = "[WSAD] movement
+mouse look
+[F] flashlight"
+align = 2
+
+[node name="bomb" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01828, 5.43815, 6.41483 )
+
+[node name="bomb2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.83357, 5.43815, 5.627 )
+
+[node name="bomb3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58305, 5.43815, 11.5866 )
 
 [editable path="Player"]
