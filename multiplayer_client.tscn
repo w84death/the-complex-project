@@ -24,63 +24,102 @@ __meta__ = {
 
 [node name="fps" parent="Client/GUI" instance=ExtResource( 4 )]
 
-[node name="info" type="Control" parent="Client/GUI"]
+[node name="info" type="VBoxContainer" parent="Client/GUI"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -40.0
+margin_left = -384.0
 margin_top = 24.0
-margin_right = -40.0
-margin_bottom = 24.0
+margin_right = -24.0
+margin_bottom = 196.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="info" type="Panel" parent="Client/GUI/info"]
-margin_left = -281.0
-margin_top = -8.0
-margin_right = 19.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 0, 48 )
+margin_right = 360.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 360, 64 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Client/GUI/info/info"]
+[node name="vbox" type="VBoxContainer" parent="Client/GUI/info/info"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn_connect" type="Button" parent="Client/GUI/info/info/HBoxContainer"]
-margin_right = 65.0
-margin_bottom = 48.0
+[node name="setup" type="HBoxContainer" parent="Client/GUI/info/info/vbox"]
+margin_top = 10.0
+margin_right = 360.0
+margin_bottom = 35.0
+alignment = 1
+
+[node name="addres" type="LineEdit" parent="Client/GUI/info/info/vbox/setup"]
+margin_left = 31.0
+margin_right = 159.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 128, 0 )
+text = "p1x.in"
+align = 1
+
+[node name="port" type="LineEdit" parent="Client/GUI/info/info/vbox/setup"]
+margin_left = 163.0
+margin_right = 259.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 96, 0 )
+text = "9666"
+align = 1
+max_length = 4
+context_menu_enabled = false
+
+[node name="btn_connect" type="Button" parent="Client/GUI/info/info/vbox/setup"]
+margin_left = 263.0
+margin_right = 328.0
+margin_bottom = 25.0
 text = "connect"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="id" type="Label" parent="Client/GUI/info/info/HBoxContainer"]
-margin_left = 69.0
-margin_top = 16.0
-margin_right = 110.0
-margin_bottom = 31.0
-text = "00000"
+[node name="player" type="HBoxContainer" parent="Client/GUI/info/info/vbox"]
+margin_top = 39.0
+margin_right = 360.0
+margin_bottom = 54.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="_id" type="Label" parent="Client/GUI/info/info/vbox/player"]
+margin_left = 83.0
+margin_right = 191.0
+margin_bottom = 15.0
+text = "Your Network ID:"
+
+[node name="id" type="Label" parent="Client/GUI/info/info/vbox/player"]
+margin_left = 195.0
+margin_right = 277.0
+margin_bottom = 15.0
+text = "#2312300000"
 
 [node name="logs" type="Panel" parent="Client/GUI/info"]
-margin_left = -281.0
-margin_top = 47.0
-margin_right = 19.0
-margin_bottom = 156.0
-rect_min_size = Vector2( 0, 48 )
+margin_top = 76.0
+margin_right = 360.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 96 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="log" type="RichTextLabel" parent="Client/GUI/info/logs"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_left = 12.0
 margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_right = 348.0
+margin_bottom = 116.0
 scroll_following = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -113,5 +152,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.23785, 0 )
 wait_time = 0.033
 
 [node name="players" type="Node" parent="Client"]
-[connection signal="pressed" from="Client/GUI/info/info/HBoxContainer/btn_connect" to="Client" method="_on_btn_connect_pressed"]
+[connection signal="pressed" from="Client/GUI/info/info/vbox/setup/btn_connect" to="Client" method="_on_btn_connect_pressed"]
 [connection signal="timeout" from="Client/tick" to="Client" method="_on_tick_timeout"]

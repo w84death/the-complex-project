@@ -21,12 +21,11 @@ func _closed(was_clean = false):
 
 func _connected(proto = ""):
 	lprint("Joining..")
-	$GUI/info/info/HBoxContainer/btn_connect.hide()
+	$GUI/info/info/vbox/setup.hide()
 	var payload = 'JOIN'
 	_client.get_peer(1).put_packet(payload.to_utf8())
 
 func connect_to_server():
-	lprint("Connecting to " + str(websocket_url))
 	lprint("Connecting to " + str(websocket_url))
 	var err = _client.connect_to_url(websocket_url)
 	if err != OK:
@@ -34,6 +33,7 @@ func connect_to_server():
 		set_process(false)
 	else:
 		lprint("Connection established.")
+		set_process(true)
 		
 func _on_data():
 	var response = _client.get_peer(1).get_packet().get_string_from_utf8().split("/", true)
@@ -41,7 +41,7 @@ func _on_data():
 	
 	if response[0] == "YOUR_ID":
 		print(response[1])
-		$GUI/info/info/HBoxContainer/id.set_text(str(response[1]))
+		$GUI/info/info/vbox/player/id.set_text(str(response[1]))
 		my_id = response[1]
 		spawn_player(response[1])
 	
@@ -79,6 +79,7 @@ func emit_position():
 	player_last_pos = player_node.translation
 
 func _on_btn_connect_pressed():
+	websocket_url = "ws://%s:%s" % [$GUI/info/info/vbox/setup/addres.text, $GUI/info/info/vbox/setup/port.text]
 	connect_to_server()
 	
 func spawn_player(id):
