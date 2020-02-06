@@ -20,7 +20,7 @@ var rotation_helper
 var raycast
 
 var MOUSE_SENSITIVITY = 0.1
-const MOUSE_INVERSION = -1
+var MOUSE_INVERSION = -1
 
 const MAX_SPRINT_SPEED = 20
 const SPRINT_ACCEL = 18
@@ -64,7 +64,7 @@ func process_input(delta):
 	if Input.is_action_pressed("movement_right"):
 		input_movement_vector.x += 1
 
-
+		
 	input_movement_vector = input_movement_vector.normalized()
 
 	dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
@@ -98,6 +98,18 @@ func process_input(delta):
 			flashlight.show()
 # ----------------------------------
 
+# ----------------------------------
+# Invert mouse
+	if Input.is_key_pressed(KEY_I):
+		invert_mouse()
+# ----------------------------------
+
+# ----------------------------------
+# Help
+	if Input.is_key_pressed(KEY_H):
+		$'../GUI'.toggle_help()
+# ----------------------------------
+
 func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()
@@ -129,3 +141,9 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
 		rotation_helper.rotation_degrees = camera_rot
+		
+func invert_mouse():
+	MOUSE_INVERSION *= -1
+	
+func change_mouse_sensitivity(sens):
+	MOUSE_SENSITIVITY = sens

@@ -3,7 +3,7 @@
 [ext_resource path="res://loading.tscn" type="PackedScene" id=1]
 
 [node name="load_game" instance=ExtResource( 1 )]
-next_scene = "main"
+next_scene = "singleplayer"
 
 [node name="Label" parent="." index="1"]
 text = "LOADING GAME..."

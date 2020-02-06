@@ -1,0 +1,160 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://textures/aim.png" type="Texture" id=1]
+[ext_resource path="res://GUI.gd" type="Script" id=2]
+[ext_resource path="res://vendors/print_fps/fps.tscn" type="PackedScene" id=3]
+[ext_resource path="res://materials/theme.tres" type="Theme" id=4]
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="fps" parent="." instance=ExtResource( 3 )]
+
+[node name="info" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -384.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = 196.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="info" type="Panel" parent="info"]
+visible = false
+margin_right = 360.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 360, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="info/info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="setup" type="HBoxContainer" parent="info/info/vbox"]
+margin_top = 10.0
+margin_right = 360.0
+margin_bottom = 35.0
+alignment = 1
+
+[node name="addres" type="LineEdit" parent="info/info/vbox/setup"]
+margin_left = 31.0
+margin_right = 159.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 128, 0 )
+text = "p1x.in"
+align = 1
+
+[node name="port" type="LineEdit" parent="info/info/vbox/setup"]
+margin_left = 163.0
+margin_right = 259.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 96, 0 )
+text = "9666"
+align = 1
+max_length = 4
+context_menu_enabled = false
+
+[node name="btn_connect" type="Button" parent="info/info/vbox/setup"]
+margin_left = 263.0
+margin_right = 328.0
+margin_bottom = 25.0
+text = "connect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player" type="HBoxContainer" parent="info/info/vbox"]
+margin_top = 39.0
+margin_right = 360.0
+margin_bottom = 54.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="_id" type="Label" parent="info/info/vbox/player"]
+margin_left = 83.0
+margin_right = 191.0
+margin_bottom = 15.0
+text = "Your Network ID:"
+
+[node name="id" type="Label" parent="info/info/vbox/player"]
+margin_left = 195.0
+margin_right = 277.0
+margin_bottom = 15.0
+text = "#2312300000"
+
+[node name="logs" type="Panel" parent="info"]
+visible = false
+margin_right = 360.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 0, 96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="log" type="RichTextLabel" parent="info/logs"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 116.0
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="help" type="Panel" parent="info"]
+margin_right = 360.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 256 )
+
+[node name="instructions" type="Label" parent="info/help"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
+text = "Welcome to The Complex Project. Game is in alpha stage. Check p1x.in or github for new releases.
+
+H - HIDE THIS HELP SCREEN !
+
+I - INVERT MOUSE
+F - FLASH LIGHT
+WSAD - MOVEMENT + MOUSE LOOK
+ESC - QUIT GAME"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="aim" type="Sprite" parent="center"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 1 )

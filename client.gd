@@ -1,7 +1,7 @@
 extends Node
 
-var player = preload("res://assets/simple_fpsplayer/Player.tscn")
-var player_dummy = preload("res://assets/simple_fpsplayer/PlayerDummy.tscn")
+var player = preload("res://addons/simple_fpsplayer/Player.tscn")
+var player_dummy = preload("res://addons/simple_fpsplayer/PlayerDummy.tscn")
 export var websocket_url = "ws://p1x.in:9666"
 var player_node
 var player_last_pos 
@@ -41,7 +41,7 @@ func _on_data():
 	
 	if response[0] == "YOUR_ID":
 		print(response[1])
-		$GUI/info/info/vbox/player/id.set_text(str(response[1]))
+		$GUI.set_player_id(response[1])
 		my_id = response[1]
 		spawn_player(response[1])
 	
@@ -65,7 +65,7 @@ func _on_data():
 		
 func lprint(message):
 	print(message)
-	$GUI/info/logs/log.add_text("%s\n" % message)
+	$GUI.add_log(message)
 	
 func _process(delta):
 	_client.poll()
