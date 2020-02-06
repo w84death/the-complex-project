@@ -1,60 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/simple_fpsplayer/PlayerDummy.gd" type="Script" id=1]
-[ext_resource path="res://materials/glass.material" type="Material" id=2]
-[ext_resource path="res://materials/robot_body.material" type="Material" id=3]
+[ext_resource path="res://addons/simple_fpsplayer/Player.tscn" type="PackedScene" id=2]
 
-[sub_resource type="CapsuleShape" id=1]
-height = 2.0
-
-[sub_resource type="CylinderMesh" id=5]
-top_radius = 0.1
-bottom_radius = 0.3
-height = 0.5
-radial_segments = 8
-rings = 2
-
-[sub_resource type="CapsuleMesh" id=3]
-mid_height = 2.0
-radial_segments = 32
-
-[sub_resource type="CylinderMesh" id=4]
-top_radius = 1.1
-bottom_radius = 1.05
-height = 0.6
-radial_segments = 32
-rings = 2
-
-[node name="PlayerDummy" type="KinematicBody"]
+[node name="PlayerDummy" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 
-[node name="collision_body" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 1 )
-
-[node name="rotation_helper" type="Spatial" parent="."]
-
-[node name="Flashlight" type="SpotLight" parent="rotation_helper"]
-transform = Transform( 0.999071, 2.55876e-09, 0.0430964, 0.00365943, 0.996388, -0.0848337, -0.0429408, 0.0849126, 0.995463, 0.812353, 0.38862, -1.01901 )
+[node name="camera" parent="rotation_helper" index="0"]
 visible = false
-light_color = Color( 1, 0.980392, 0.815686, 1 )
-light_energy = 24.0
-light_bake_mode = 0
-shadow_enabled = true
-spot_range = 128.0
-spot_angle = 48.0
+current = false
 
-[node name="flashlight" type="MeshInstance" parent="rotation_helper/Flashlight"]
-transform = Transform( 1, 3.72529e-09, 0, 0, -1.63913e-07, -1, -7.45058e-09, 1, -1.63913e-07, -0.00904363, 0.0178832, 0.209651 )
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="body" type="MeshInstance" parent="rotation_helper"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-mesh = SubResource( 3 )
-material/0 = ExtResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="rotation_helper/body"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, -1.63807e-07, -1.00544 )
-mesh = SubResource( 4 )
-material/0 = ExtResource( 2 )
+[node name="playerfeet" parent="." index="3"]
+visible = false
