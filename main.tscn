@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://vendors/print_fps/fps.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/hangar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://materials/theme.tres" type="Theme" id=4]
-[ext_resource path="res://models/bombs/underwater_mine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://textures/logo.png" type="Texture" id=9]
-[ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/simple_fpsplayer/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://textures/aim.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=1]
@@ -49,7 +47,6 @@ tracks/2/keys = {
 }
 
 [node name="main" type="Spatial"]
-script = ExtResource( 1 )
 
 [node name="hangar" parent="." instance=ExtResource( 3 )]
 
@@ -157,14 +154,5 @@ text = "[WSAD] movement
 mouse look
 [F] flashlight"
 align = 2
-
-[node name="bomb" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01828, 5.43815, 6.41483 )
-
-[node name="bomb2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.83357, 5.43815, 5.627 )
-
-[node name="bomb3" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58305, 5.43815, 11.5866 )
 
 [editable path="Player"]

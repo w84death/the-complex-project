@@ -1,7 +1,6 @@
 extends KinematicBody
 #Variables
 var global = "root/global"
-var bomb = preload("res://models/bombs/underwater_mine.tscn")
 var multiplayer_id = 0
 
 var is_player = true
@@ -64,9 +63,7 @@ func process_input(delta):
 		input_movement_vector.x -= 1
 	if Input.is_action_pressed("movement_right"):
 		input_movement_vector.x += 1
-	
-	if Input.is_action_pressed("shoot"):
-		shoot()
+
 
 	input_movement_vector = input_movement_vector.normalized()
 
@@ -132,15 +129,3 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
 		rotation_helper.rotation_degrees = camera_rot
-		
-func shoot():
-	if WEAPON_COOL:
-		var new_bomb = bomb.instance()
-		new_bomb.translation = translation
-		$'../hangar'.add_child(new_bomb)
-		WEAPON_COOL = false
-		$weapon_cooldown.wait_time = WEAPON_COOLDOWN_TIME
-		$weapon_cooldown.start()
-
-func _on_weapon_cooldown_timeout():
-	WEAPON_COOL = true
