@@ -44,6 +44,8 @@ func _on_data():
 		$GUI.set_player_id(response[1])
 		my_id = response[1]
 		spawn_player(response[1])
+		var payload = 'GET_PLAYERS_LIST'
+		_client.get_peer(1).put_packet(payload.to_utf8())
 	
 	if response[0] == "NEW_JOIN":
 		if response[1] != my_id:

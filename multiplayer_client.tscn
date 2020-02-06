@@ -15,6 +15,9 @@ script = ExtResource( 6 )
 [node name="info" parent="Client/GUI/info" index="0"]
 visible = true
 
+[node name="addres" parent="Client/GUI/info/info/vbox/setup" index="0"]
+text = "192.168.1.120"
+
 [node name="logs" parent="Client/GUI/info" index="1"]
 visible = true
 margin_top = 76.0

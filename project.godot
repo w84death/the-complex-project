@@ -399,7 +399,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The Complex Project"
-run/main_scene="res://vendors/p1x/intro/intro.tscn"
+run/main_scene="res://multiplayer_client.tscn"
 boot_splash/image="res://textures/loading_p1x_final.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
@@ -408,7 +408,6 @@ config/icon="res://icon.png"
 
 window/size/width=888
 window/size/height=480
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
