@@ -1,6 +1,6 @@
-extends KinematicBody
+extends Spatial
 
-var multiplayer_id = 0
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -9,10 +9,7 @@ var multiplayer_id = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-
-func flashlight(turned_on):
-	if turned_on:
-		$rotation_helper/Flashlight.show()
-	else:
-		$rotation_helper/Flashlight.hide()
+	
+func _input(event):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_tree().change_scene("res://loading_menu.tscn")

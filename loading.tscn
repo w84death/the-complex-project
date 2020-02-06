@@ -14,7 +14,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_scene = "menudemo"
+next_scene = "menu"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

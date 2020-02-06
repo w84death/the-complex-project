@@ -85,7 +85,7 @@ func process_input(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			get_tree().quit()
+			get_tree().change_scene("res://loading_menu.tscn")
 	# ----------------------------------
 
 # ----------------------------------
@@ -147,3 +147,17 @@ func invert_mouse():
 	
 func change_mouse_sensitivity(sens):
 	MOUSE_SENSITIVITY = sens
+
+# THIS NEEDS TO BE REFACTORED -> MOVED TO THE SERVER LOGIC
+func get_posrot():
+	var rotpos = 'POS/%s,%s,%s/%s,%s' % [
+		translation.x, 
+		translation.y, 
+		translation.z,
+		rotation_helper.rotation_degrees.x,
+		rotation_degrees.y,
+	]
+	return rotpos
+
+func get_flashlight_status():
+	return $rotation_helper/Flashlight.is_visible_in_tree()

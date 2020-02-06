@@ -15,3 +15,6 @@ func _on_btn_join_pressed():
 
 func _on_btn_start_game_pressed():
 	self.get_tree().change_scene("res://singleplayer.tscn")
+
+func _on_btn_quit_pressed():
+	self.quit_game()
