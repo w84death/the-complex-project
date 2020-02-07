@@ -60,13 +60,12 @@ shadow_size = 4
 anti_aliasing = false
 
 [sub_resource type="DynamicFont" id=6]
-size = 12
+size = 10
 outline_size = 2
-outline_color = Color( 0.184314, 0.184314, 0.184314, 0.611765 )
+outline_color = Color( 0.0901961, 0.0901961, 0.0901961, 0.603922 )
 use_mipmaps = true
 use_filter = true
 extra_spacing_char = -1
-extra_spacing_space = 6
 font_data = ExtResource( 1 )
 
 [resource]

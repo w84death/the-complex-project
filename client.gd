@@ -19,7 +19,7 @@ func _ready():
 		
 func _closed(was_clean = false):
 	lprint("Connection closed.")
-	$GUI/info/info/vbox/setup.show()
+	$GUI.show_network_setup()
 	set_process(false)
 	networking_started = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -31,7 +31,7 @@ func _closed(was_clean = false):
 
 func _connected(proto = ""):
 	lprint("Joining..")
-	$GUI/info/info/vbox/setup.hide()
+	$GUI.hide_network_setup()
 	var payload = 'JOIN'
 	_client.get_peer(1).put_packet(payload.to_utf8())
 	networking_started = true
@@ -45,11 +45,16 @@ func connect_to_server():
 	else:
 		lprint("Connection established.")
 		set_process(true)
-		
+
+func disconnect_from_server():
+	lprint("Disconnecting from " + str(websocket_url))
+	_client.disconnect_from_host()
+	
 func _on_data():
 	var response = _client.get_peer(1).get_packet().get_string_from_utf8().split("/", true)
 	
 	if response[0] == "YOUR_ID":
+		lprint("Joined, got Network ID.")
 		$GUI.set_player_id(response[1])
 		my_id = response[1]
 		spawn_player(response[1])
@@ -72,6 +77,9 @@ func _on_data():
 			if p_node.multiplayer_id == response[1]:
 				$players.remove_child(p_node)
 		lprint("%s disconnected" % [response[1]])
+		
+	if response[0] == "MOTD":
+		lprint(response[1])
 
 func update_players_posrot(id, pos, rot):
 	var parse_pos = pos.split(',')
@@ -110,12 +118,12 @@ func emit_flashlight():
 	_client.get_peer(1).put_packet(payload.to_utf8())
 	
 func _on_btn_connect_pressed():
-	websocket_url = "ws://%s:%s" % [$GUI/info/info/vbox/setup/addres.text, $GUI/info/info/vbox/setup/port.text]
+	websocket_url = $GUI.get_websocket_url()
 	connect_to_server()
 	
 func spawn_player(id):
 	player_node = player.instance()
-	player_node.translation = $hangar/start.translation
+	player_node.translation = Vector3(0,0,0)
 	player_node.get_node("rotation_helper/camera").make_current()
 	player_node.multiplayer_id = id
 	add_child(player_node)
@@ -130,8 +138,11 @@ func spawn_player_dummy(id, pos, flashlight):
 	player_new.flashlight(flashlight)
 	$players.add_child(player_new)
 
+func is_connected_to_server():
+	return networking_started
+	
 func _on_tick_timeout():
-	if networking_started:
+	if is_connected_to_server():
 		if player_last_posrot != player_node.get_posrot():
 			emit_position()
 			player_last_posrot = player_node.get_posrot()

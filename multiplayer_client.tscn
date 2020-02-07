@@ -14,31 +14,30 @@ script = ExtResource( 6 )
 
 [node name="GUI" parent="Client" instance=ExtResource( 1 )]
 
-[node name="info" parent="Client/GUI/info" index="0"]
+[node name="network" parent="Client/GUI/info" index="0"]
 visible = true
 
-[node name="addres" parent="Client/GUI/info/info/vbox/setup" index="0"]
-margin_left = 26.0
-margin_right = 154.0
+[node name="addres" parent="Client/GUI/info/network/setup" index="0"]
+margin_left = 25.0
+margin_right = 153.0
+margin_bottom = 52.0
 
-[node name="port" parent="Client/GUI/info/info/vbox/setup" index="1"]
-margin_left = 158.0
-margin_right = 254.0
+[node name="port" parent="Client/GUI/info/network/setup" index="1"]
+margin_left = 157.0
+margin_right = 253.0
+margin_bottom = 52.0
 
-[node name="btn_connect" parent="Client/GUI/info/info/vbox/setup" index="2"]
-margin_left = 258.0
-margin_right = 334.0
-text = "CONNECT"
-
-[node name="logs" parent="Client/GUI/info" index="1"]
-visible = true
-margin_top = 76.0
-margin_bottom = 172.0
+[node name="btn_connect" parent="Client/GUI/info/network/setup" index="2"]
+margin_left = 257.0
+margin_right = 323.0
+margin_bottom = 52.0
 
 [node name="help" parent="Client/GUI/info" index="2"]
-visible = false
 margin_top = 184.0
 margin_bottom = 440.0
+
+[node name="logs" parent="Client/GUI/bottom" index="0"]
+visible = true
 
 [node name="cameras" type="Spatial" parent="Client"]
 
@@ -54,7 +53,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.23785, 0 )
 wait_time = 0.033
 
 [node name="players" type="Node" parent="Client"]
-[connection signal="pressed" from="Client/GUI/info/info/vbox/setup/btn_connect" to="Client" method="_on_btn_connect_pressed"]
+[connection signal="pressed" from="Client/GUI/info/network/setup/btn_connect" to="Client" method="_on_btn_connect_pressed"]
 [connection signal="timeout" from="Client/tick" to="Client" method="_on_tick_timeout"]
 
 [editable path="Client/GUI"]

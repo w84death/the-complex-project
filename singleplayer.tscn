@@ -17,6 +17,15 @@ transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 0, 0, -0.
 
 [node name="Flashlight" parent="PlayerDummy/rotation_helper" index="1"]
 visible = true
+shadow_color = Color( 0, 0, 0, 1 )
+
+[node name="flashlight_body2" parent="PlayerDummy/rotation_helper/Flashlight" index="1"]
+visible = true
+
+[node name="playerfeet" parent="PlayerDummy" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -2.2, 0 )
 
 [node name="PlayerDummy2" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.607612, 0, 0.794234, 0, 1, 0, -0.794234, 0, -0.607612, 11.3139, -1.00503, -14.7878 )

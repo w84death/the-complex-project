@@ -57,6 +57,7 @@ __meta__ = {
 }
 
 [node name="logo" type="Sprite" parent="GUI/center"]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
@@ -67,8 +68,8 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -64.0
-margin_bottom = -64.0
+margin_top = -32.0
+margin_bottom = -32.0
 
 [node name="Panel" type="Panel" parent="GUI/bottom"]
 anchor_left = 0.5
@@ -78,7 +79,7 @@ anchor_bottom = 0.5
 margin_left = -180.0
 margin_top = -33.5
 margin_right = 180.0
-margin_bottom = 33.5
+margin_bottom = 6.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -86,44 +87,59 @@ __meta__ = {
 [node name="menu" type="HBoxContainer" parent="GUI/bottom/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="btn_start_game" type="Button" parent="GUI/bottom/Panel/menu"]
-margin_left = 15.0
-margin_right = 128.0
-margin_bottom = 43.0
+margin_left = 39.0
+margin_right = 134.0
+margin_bottom = 28.0
 text = "SINGLE PLAYER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="btn_join" type="Button" parent="GUI/bottom/Panel/menu"]
-margin_left = 132.0
-margin_right = 234.0
-margin_bottom = 43.0
+margin_left = 138.0
+margin_right = 227.0
+margin_bottom = 28.0
 text = "MULTIPLAYER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Container" type="Container" parent="GUI/bottom/Panel/menu"]
-margin_left = 238.0
-margin_right = 270.0
-margin_bottom = 43.0
+margin_left = 231.0
+margin_right = 263.0
+margin_bottom = 28.0
 rect_min_size = Vector2( 32, 0 )
 
 [node name="btn_quit" type="Button" parent="GUI/bottom/Panel/menu"]
-margin_left = 274.0
-margin_right = 320.0
-margin_bottom = 43.0
+margin_left = 267.0
+margin_right = 309.0
+margin_bottom = 28.0
 text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/bottom"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -45.5
+margin_top = 11.5
+margin_right = 45.5
+margin_bottom = 24.5
+text = "Version 0.9 by P1X"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
