@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://textures/logo.png" type="Texture" id=2]
 [ext_resource path="res://vendors/p1x/camera_3d_effects/camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://materials/theme.tres" type="Theme" id=4]
 [ext_resource path="res://maps/hangar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://vendors/print_fps/fps.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "demo"
@@ -56,11 +57,83 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="logo" type="Sprite" parent="GUI/center"]
-scale = Vector2( 0.5, 0.5 )
+[node name="Panel" type="Panel" parent="GUI/center"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -73.0
+margin_top = -91.0
+margin_right = 73.0
+margin_bottom = 91.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="GUI/center/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+alignment = 2
+
+[node name="logo" type="Sprite" parent="GUI/center/Panel/menu"]
+position = Vector2( 7, 6 )
+scale = Vector2( 0.307692, 0.307692 )
 texture = ExtResource( 2 )
+centered = false
 __meta__ = {
 "_editor_description_": ""
+}
+
+[node name="ver" type="Label" parent="GUI/center/Panel/menu"]
+margin_top = 41.0
+margin_right = 134.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 24 )
+text = "V0.99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="GUI/center/Panel/menu"]
+margin_top = 70.0
+margin_right = 134.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 32, 16 )
+
+[node name="btn_start_game" type="Button" parent="GUI/center/Panel/menu"]
+margin_top = 90.0
+margin_right = 134.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 0, 24 )
+text = "SINGLE PLAYER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_join" type="Button" parent="GUI/center/Panel/menu"]
+margin_top = 118.0
+margin_right = 134.0
+margin_bottom = 142.0
+rect_min_size = Vector2( 0, 24 )
+text = "MULTIPLAYER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_quit" type="Button" parent="GUI/center/Panel/menu"]
+margin_top = 146.0
+margin_right = 134.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 0, 24 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="bottom" type="Control" parent="GUI"]
@@ -68,81 +141,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -32.0
-margin_bottom = -32.0
-
-[node name="Panel" type="Panel" parent="GUI/bottom"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -180.0
-margin_top = -33.5
-margin_right = 180.0
-margin_bottom = 6.5
+margin_top = -104.0
+margin_bottom = -104.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="menu" type="HBoxContainer" parent="GUI/bottom/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_start_game" type="Button" parent="GUI/bottom/Panel/menu"]
-margin_left = 39.0
-margin_right = 134.0
-margin_bottom = 28.0
-text = "SINGLE PLAYER"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_join" type="Button" parent="GUI/bottom/Panel/menu"]
-margin_left = 138.0
-margin_right = 227.0
-margin_bottom = 28.0
-text = "MULTIPLAYER"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Container" type="Container" parent="GUI/bottom/Panel/menu"]
-margin_left = 231.0
-margin_right = 263.0
-margin_bottom = 28.0
-rect_min_size = Vector2( 32, 0 )
-
-[node name="btn_quit" type="Button" parent="GUI/bottom/Panel/menu"]
-margin_left = 267.0
-margin_right = 309.0
-margin_bottom = 28.0
-text = "QUIT"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/bottom"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -45.5
-margin_top = 11.5
-margin_right = 45.5
-margin_bottom = 24.5
-text = "Version 0.9 by P1X"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="fps" parent="GUI" instance=ExtResource( 6 )]
 
 [node name="hangar" parent="." instance=ExtResource( 5 )]
 
@@ -152,6 +157,6 @@ transform = Transform( 0.980691, -0.160652, -0.111513, 0.189851, 0.918901, 0.345
 [node name="demo_anim" type="AnimationPlayer" parent="."]
 autoplay = "demo"
 anims/demo = SubResource( 1 )
-[connection signal="pressed" from="GUI/bottom/Panel/menu/btn_start_game" to="GUI" method="_on_btn_start_game_pressed"]
-[connection signal="pressed" from="GUI/bottom/Panel/menu/btn_join" to="GUI" method="_on_btn_join_pressed"]
-[connection signal="pressed" from="GUI/bottom/Panel/menu/btn_quit" to="GUI" method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="GUI/center/Panel/menu/btn_start_game" to="GUI" method="_on_btn_start_game_pressed"]
+[connection signal="pressed" from="GUI/center/Panel/menu/btn_join" to="GUI" method="_on_btn_join_pressed"]
+[connection signal="pressed" from="GUI/center/Panel/menu/btn_quit" to="GUI" method="_on_btn_quit_pressed"]
