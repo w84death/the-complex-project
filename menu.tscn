@@ -4,12 +4,12 @@
 [ext_resource path="res://textures/logo.png" type="Texture" id=2]
 [ext_resource path="res://vendors/p1x/camera_3d_effects/camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://materials/theme.tres" type="Theme" id=4]
-[ext_resource path="res://maps/hangar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://maps/menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://vendors/print_fps/fps.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "demo"
-length = 120.0
+length = 30.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("camera_3d_effects:translation")
@@ -18,22 +18,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 7.7, 16.7, 25.5, 32.1, 41, 51.4, 65.9, 78.1, 86.5, 92.7, 102.8, 110.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3.3, 10.9, 17.4, 24.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0.808201, 0 ), Vector3( 0, 6.84462, 0 ), Vector3( 0, 15.258, 3.66439 ), Vector3( -1.04697, 15.1147, 28.7805 ), Vector3( -3.66165, 14.8549, 55.3465 ), Vector3( 4.73517, 14.6363, 90.4521 ), Vector3( -8.10495, 2.19157, 89.2861 ), Vector3( -16.331, 1.3, 63.438 ), Vector3( -13.5092, 22.0253, 48.0184 ), Vector3( -1.02343, 17.2043, 38.6872 ), Vector3( 5.28348, 13.838, 32.3747 ), Vector3( -11.523, 6.718, 21.601 ), Vector3( -2.64152, 4.28774, 3.19153 ) ]
+"values": [ Vector3( 0, 1.634, 0 ), Vector3( 7.009, 2.72, 0 ), Vector3( 42.9632, 2.0569, 0 ), Vector3( 42.9632, 1.02831, 2.37241 ), Vector3( 22, 5.726, -3.87691 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
-tracks/1/interp = 2
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 7.7, 16.7, 20.5, 24.8, 31.1, 39.1, 47.9, 51.4, 62.6, 76.2, 89.3, 104.6, 110.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3.9, 10.1, 16.2, 22.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 77.957, 0 ), Vector3( 0, 142.555, 5 ), Vector3( 0, 190, 0 ), Vector3( 0, 162.665, -30 ), Vector3( 0, 207, 30 ), Vector3( 0, 171, -7 ), Vector3( 0, 61.537, -45 ), Vector3( 0, 18, 0 ), Vector3( 0, -15, 13 ), Vector3( -77, 31, 3.523 ), Vector3( -34.577, 56, 1.582 ), Vector3( 0, -7.85714, 0 ), Vector3( 0, -15, 0 ) ]
+"values": [ Vector3( 0, -90, 9.327 ), Vector3( -11.114, -90, 0 ), Vector3( -5.72458, -86.2698, -33.1696 ), Vector3( -5.725, -266, -33.17 ), Vector3( -4.382, -244.633, 17 ) ]
 }
 
 [node name="menu" type="Spatial"]
@@ -89,9 +89,9 @@ __meta__ = {
 }
 
 [node name="ver" type="Label" parent="GUI/center/Panel/menu"]
-margin_top = 41.0
+margin_top = 42.0
 margin_right = 134.0
-margin_bottom = 65.0
+margin_bottom = 66.0
 rect_min_size = Vector2( 0, 24 )
 text = "V0.99"
 align = 1
@@ -152,7 +152,7 @@ __meta__ = {
 [node name="hangar" parent="." instance=ExtResource( 5 )]
 
 [node name="camera_3d_effects" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.980691, -0.160652, -0.111513, 0.189851, 0.918901, 0.345801, 0.0469155, -0.360295, 0.931658, -16.4555, 1.91001, 62.3777 )
+transform = Transform( -0.877493, 0.209001, -0.431654, 0.216726, 0.975713, 0.0318531, 0.427827, -0.0655996, -0.901477, 11.9037, 4.47789, -2.87325 )
 
 [node name="demo_anim" type="AnimationPlayer" parent="."]
 autoplay = "demo"
