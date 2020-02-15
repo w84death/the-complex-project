@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 func _ready():
 	pass
@@ -18,3 +18,9 @@ func _on_btn_start_game_pressed():
 
 func _on_btn_quit_pressed():
 	self.quit_game()
+
+func _on_btn_settings_pressed():
+	$menu_anim.play("menu_to_settings")
+
+func _on_btn_back_pressed():
+	$menu_anim.play("settings_back")

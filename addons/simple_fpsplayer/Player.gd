@@ -6,7 +6,7 @@ var multiplayer_id = 0
 var is_player = true
 const GRAVITY = -64.8
 var vel = Vector3()
-const MAX_SPEED = 24
+const MAX_SPEED = 8
 const JUMP_SPEED = 24
 const ACCEL = 8.5
 
