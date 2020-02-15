@@ -406,8 +406,8 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=640
-window/size/height=360
+window/size/width=1920
+window/size/height=822
 window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
@@ -457,5 +457,7 @@ shoot={
 [rendering]
 
 threads/thread_model=2
-quality/filters/msaa=2
+quality/shadows/filter_mode=2
+quality/subsurface_scattering/quality=2
+quality/voxel_cone_tracing/high_quality=true
 environment/default_environment="res://default_env.tres"

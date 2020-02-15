@@ -3,9 +3,11 @@
 [ext_resource path="res://vendors/p1x/camera_3d_effects/camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/simple_fpsplayer/Player.gd" type="Script" id=2]
 [ext_resource path="res://audio/click.ogg" type="AudioStream" id=3]
-[ext_resource path="res://textures/p1x_common/glass.material" type="Material" id=4]
-[ext_resource path="res://textures/p1x_common/light.material" type="Material" id=5]
+[ext_resource path="res://materials/p1x_common/glass.material" type="Material" id=4]
+[ext_resource path="res://materials/p1x_common/light.material" type="Material" id=5]
 [ext_resource path="res://materials/robot_body.material" type="Material" id=6]
+
+
 
 
 

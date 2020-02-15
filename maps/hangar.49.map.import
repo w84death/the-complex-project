@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/hangar.49.map-193e197bcaed1bfe2513fff13a70a9c1.tres"
+
+[deps]
+
+source_file="res://maps/hangar.49.map"
+dest_files=[ "res://.import/hangar.49.map-193e197bcaed1bfe2513fff13a70a9c1.tres" ]
+
+[params]
+
