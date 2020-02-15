@@ -11,7 +11,7 @@ margin_bottom = 24.0
 [node name="Panel" type="Panel" parent="."]
 margin_left = -34.0
 margin_top = -14.0
-margin_right = 38.0
+margin_right = 56.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 0, 32 )
 __meta__ = {

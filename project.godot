@@ -457,7 +457,9 @@ shoot={
 [rendering]
 
 threads/thread_model=2
+quality/filters/anisotropic_filter_level=8
 quality/shadows/filter_mode=2
 quality/subsurface_scattering/quality=2
 quality/voxel_cone_tracing/high_quality=true
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"

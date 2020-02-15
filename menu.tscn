@@ -9,7 +9,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "demo"
-length = 30.0
+length = 8.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("camera_3d_effects:translation")
@@ -18,22 +18,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3.3, 10.9, 17.4, 24.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 1.4, 5.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 1.634, 0 ), Vector3( 7.009, 2.72, 0 ), Vector3( 42.9632, 2.0569, 0 ), Vector3( 42.9632, 1.02831, 2.37241 ), Vector3( 22, 5.726, -3.87691 ) ]
+"values": [ Vector3( 0.377, 5.162, -2.794 ), Vector3( 0.312, 5.306, -2.385 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3.9, 10.1, 16.2, 22.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, -90, 9.327 ), Vector3( -11.114, -90, 0 ), Vector3( -5.72458, -86.2698, -33.1696 ), Vector3( -5.725, -266, -33.17 ), Vector3( -4.382, -244.633, 17 ) ]
+"values": [ Vector3( 2.769, -115.278, 8.661 ), Vector3( -1.828, -69.562, -12.617 ) ]
 }
 
 [node name="menu" type="Spatial"]
@@ -62,10 +62,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -73.0
-margin_top = -91.0
-margin_right = 73.0
-margin_bottom = 91.0
+margin_left = -128.0
+margin_top = -128.0
+margin_right = 128.0
+margin_bottom = 172.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,63 +73,66 @@ __meta__ = {
 [node name="menu" type="VBoxContainer" parent="GUI/center/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = -24.0
 alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="logo" type="Sprite" parent="GUI/center/Panel/menu"]
-position = Vector2( 7, 6 )
-scale = Vector2( 0.307692, 0.307692 )
+position = Vector2( 105, 20 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
-centered = false
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="ver" type="Label" parent="GUI/center/Panel/menu"]
-margin_top = 42.0
-margin_right = 134.0
-margin_bottom = 66.0
+margin_top = 60.0
+margin_right = 208.0
+margin_bottom = 84.0
 rect_min_size = Vector2( 0, 24 )
-text = "V0.99"
+text = "V0.999"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Container" type="Container" parent="GUI/center/Panel/menu"]
-margin_top = 70.0
-margin_right = 134.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 32, 16 )
-
 [node name="btn_start_game" type="Button" parent="GUI/center/Panel/menu"]
-margin_top = 90.0
-margin_right = 134.0
-margin_bottom = 114.0
-rect_min_size = Vector2( 0, 24 )
+margin_top = 96.0
+margin_right = 208.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 32 )
 text = "SINGLE PLAYER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="btn_join" type="Button" parent="GUI/center/Panel/menu"]
-margin_top = 118.0
-margin_right = 134.0
-margin_bottom = 142.0
-rect_min_size = Vector2( 0, 24 )
+margin_top = 140.0
+margin_right = 208.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 32 )
 text = "MULTIPLAYER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="btn_settings" type="Button" parent="GUI/center/Panel/menu"]
+margin_top = 184.0
+margin_right = 208.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 0, 32 )
+text = "SETTINGS"
+
 [node name="btn_quit" type="Button" parent="GUI/center/Panel/menu"]
-margin_top = 146.0
-margin_right = 134.0
-margin_bottom = 170.0
+margin_top = 228.0
+margin_right = 208.0
+margin_bottom = 252.0
 rect_min_size = Vector2( 0, 24 )
 text = "QUIT"
 __meta__ = {
@@ -152,10 +155,11 @@ __meta__ = {
 [node name="hangar" parent="." instance=ExtResource( 5 )]
 
 [node name="camera_3d_effects" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.877493, 0.209001, -0.431654, 0.216726, 0.975713, 0.0318531, 0.427827, -0.0655996, -0.901477, 11.9037, 4.47789, -2.87325 )
+transform = Transform( -0.428719, 0.0211172, -0.903191, 0.150412, 0.987442, -0.0483094, 0.890828, -0.156562, -0.426512, 0.357885, 5.20435, -2.67373 )
 
 [node name="demo_anim" type="AnimationPlayer" parent="."]
 autoplay = "demo"
+playback_speed = 0.25
 anims/demo = SubResource( 1 )
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_start_game" to="GUI" method="_on_btn_start_game_pressed"]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_join" to="GUI" method="_on_btn_join_pressed"]

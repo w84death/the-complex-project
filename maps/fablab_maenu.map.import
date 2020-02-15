@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/fablab_maenu.map-5b581d8c6766f36acffb1ae4801bff13.tres"
+
+[deps]
+
+source_file="res://maps/fablab_maenu.map"
+dest_files=[ "res://.import/fablab_maenu.map-5b581d8c6766f36acffb1ae4801bff13.tres" ]
+
+[params]
+
