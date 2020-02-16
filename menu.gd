@@ -14,7 +14,8 @@ func _on_btn_join_pressed():
 	self.get_tree().change_scene("res://multiplayer_client.tscn")
 
 func _on_btn_start_game_pressed():
-	self.get_tree().change_scene("res://singleplayer.tscn")
+	$menu_anim.play("menu_to_single")
+	
 
 func _on_btn_quit_pressed():
 	self.quit_game()
@@ -24,3 +25,11 @@ func _on_btn_settings_pressed():
 
 func _on_btn_back_pressed():
 	$menu_anim.play("settings_back")
+
+
+func _on_btn_single_back_pressed():
+	$menu_anim.play("single_back")
+
+
+func _on_btn_startgame_pressed():
+	self.get_tree().change_scene("res://singleplayer.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://textures/logo.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://maps/menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://vendors/print_fps/fps.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "menu"
 loop = true
 tracks/0/type = "value"
@@ -57,6 +57,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -128, -128 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GUI/center/single:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1280, -128 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -111,7 +123,69 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "settings_back"
+resource_name = "menu_to_single"
+tracks/0/type = "value"
+tracks/0/path = NodePath("camera_3d_effects:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.51, 6.131, -2.192 ), Vector3( 3.977, 9.187, -7.505 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -10.617, -88.787, 0 ), Vector3( -46.499, 10.726, 42 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUI/center/Panel:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 300 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUI/center/Panel:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, -128 ), Vector2( 1280, -128 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GUI/center/single:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1280, -128 ), Vector2( -128, -128 ) ]
+}
+
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("camera_3d_effects:translation")
 tracks/0/interp = 2
@@ -161,8 +235,58 @@ tracks/3/keys = {
 "values": [ Vector2( -128, -128 ), Vector2( -1280, -128 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "demo"
+[sub_resource type="Animation" id=5]
+resource_name = "single_back"
+tracks/0/type = "value"
+tracks/0/path = NodePath("camera_3d_effects:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 3.977, 9.187, -7.505 ), Vector3( -0.51, 6.131, -2.192 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -46.499, 10.726, 42 ), Vector3( -10.617, -88.787, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUI/center/single:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, -128 ), Vector2( -1280, -128 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUI/center/Panel:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280, -128 ), Vector2( -128, -128 ) ]
+}
+
+[sub_resource type="Animation" id=6]
 length = 8.0
 loop = true
 tracks/0/type = "value"
@@ -216,9 +340,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -1280.0
+margin_left = -128.0
 margin_top = -128.0
-margin_right = -1024.0
+margin_right = 128.0
 margin_bottom = 172.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -245,9 +369,9 @@ __meta__ = {
 }
 
 [node name="ver" type="Label" parent="GUI/center/Panel/menu"]
-margin_top = 60.0
+margin_top = 52.0
 margin_right = 208.0
-margin_bottom = 84.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 0, 24 )
 text = "V0.999"
 align = 1
@@ -257,9 +381,9 @@ __meta__ = {
 }
 
 [node name="btn_start_game" type="Button" parent="GUI/center/Panel/menu"]
-margin_top = 96.0
+margin_top = 88.0
 margin_right = 208.0
-margin_bottom = 128.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 0, 32 )
 text = "SINGLE PLAYER"
 __meta__ = {
@@ -267,9 +391,9 @@ __meta__ = {
 }
 
 [node name="btn_join" type="Button" parent="GUI/center/Panel/menu"]
-margin_top = 140.0
+margin_top = 132.0
 margin_right = 208.0
-margin_bottom = 172.0
+margin_bottom = 164.0
 rect_min_size = Vector2( 0, 32 )
 text = "MULTIPLAYER"
 __meta__ = {
@@ -277,17 +401,17 @@ __meta__ = {
 }
 
 [node name="btn_settings" type="Button" parent="GUI/center/Panel/menu"]
-margin_top = 184.0
+margin_top = 176.0
 margin_right = 208.0
-margin_bottom = 216.0
+margin_bottom = 208.0
 rect_min_size = Vector2( 0, 32 )
 text = "SETTINGS"
 
 [node name="btn_quit" type="Button" parent="GUI/center/Panel/menu"]
-margin_top = 228.0
+margin_top = 220.0
 margin_right = 208.0
 margin_bottom = 252.0
-rect_min_size = Vector2( 0, 24 )
+rect_min_size = Vector2( 0, 32 )
 text = "QUIT"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -298,9 +422,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -128.0
+margin_left = 1280.0
 margin_top = -128.0
-margin_right = 128.0
+margin_right = 1536.0
 margin_bottom = 172.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -319,16 +443,66 @@ __meta__ = {
 }
 
 [node name="btn_invert" type="CheckButton" parent="GUI/center/settings/menu"]
-margin_top = 179.0
+margin_top = 168.0
 margin_right = 208.0
-margin_bottom = 216.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 0, 40 )
 text = "INVERT LOOK"
 
 [node name="btn_back" type="Button" parent="GUI/center/settings/menu"]
-margin_top = 228.0
+margin_top = 220.0
 margin_right = 208.0
 margin_bottom = 252.0
-rect_min_size = Vector2( 0, 24 )
+rect_min_size = Vector2( 0, 32 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="single" type="Panel" parent="GUI/center"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1280.0
+margin_top = -128.0
+margin_right = -1024.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="GUI/center/single"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = -24.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_startgame" type="Button" parent="GUI/center/single/menu"]
+margin_right = 208.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+text = "START NEW GAME"
+
+[node name="btn_continue" type="Button" parent="GUI/center/single/menu"]
+margin_top = 44.0
+margin_right = 208.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 0, 32 )
+disabled = true
+text = "CONTINUE"
+
+[node name="btn_single_back" type="Button" parent="GUI/center/single/menu"]
+margin_top = 88.0
+margin_right = 208.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 32 )
 text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -351,20 +525,24 @@ __meta__ = {
 transform = Transform( 0.999954, -0.00836259, 0.00472762, 0.00840554, 0.999923, -0.00913927, -0.00465083, 0.00917859, 0.999947, 0, 0, 0 )
 
 [node name="camera_3d_effects" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.450784, 0.384471, 0.80559, 0, 0.902487, -0.430716, -0.892633, -0.19416, -0.406827, 3.221, 1.41, 1.915 )
+transform = Transform( 0.0211691, 0.184202, -0.98266, 0, 0.98288, 0.184243, 0.999776, -0.00390026, 0.0208067, -0.51, 6.131, -2.192 )
 
 [node name="menu_anim" type="AnimationPlayer" parent="."]
 autoplay = "menu"
-anims/menu = SubResource( 5 )
+anims/menu = SubResource( 1 )
 anims/menu_to_settings = SubResource( 2 )
-anims/settings_back = SubResource( 3 )
+anims/menu_to_single = SubResource( 3 )
+anims/settings_back = SubResource( 4 )
+anims/single_back = SubResource( 5 )
 
 [node name="background_anim" type="AnimationPlayer" parent="."]
 autoplay = "demo"
 playback_speed = 0.25
-anims/demo = SubResource( 4 )
+anims/demo = SubResource( 6 )
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_start_game" to="." method="_on_btn_start_game_pressed"]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_join" to="." method="_on_btn_join_pressed"]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_settings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_quit" to="." method="_on_btn_quit_pressed"]
 [connection signal="pressed" from="GUI/center/settings/menu/btn_back" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="GUI/center/single/menu/btn_startgame" to="." method="_on_btn_startgame_pressed"]
+[connection signal="pressed" from="GUI/center/single/menu/btn_single_back" to="." method="_on_btn_single_back_pressed"]

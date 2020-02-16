@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/fabguy.map-bab54ebbd0c41ba8ae25f9793f988a27.tres"
+
+[deps]
+
+source_file="res://maps/fabguy.map"
+dest_files=[ "res://.import/fabguy.map-bab54ebbd0c41ba8ae25f9793f988a27.tres" ]
+
+[params]
+

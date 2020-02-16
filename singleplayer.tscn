@@ -13,7 +13,7 @@
 environment = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32958, 1.43284, 7.72926 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.813277, 1.43284, 7.57827 )
 
 [node name="fablab_a1" parent="." instance=ExtResource( 2 )]
 

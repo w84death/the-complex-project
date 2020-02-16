@@ -6,14 +6,14 @@ var multiplayer_id = 0
 var is_player = true
 const GRAVITY = -64.8
 var vel = Vector3()
-const MAX_SPEED = 8
+const MAX_SPEED = 16
 const JUMP_SPEED = 24
 const ACCEL = 8.5
 
 var dir = Vector3()
 
 const DEACCEL= 16
-const MAX_SLOPE_ANGLE = 40
+const MAX_SLOPE_ANGLE = 90
 
 var camera
 var rotation_helper
