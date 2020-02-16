@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/panel_white_normal.png-b93a9e1cf76ccef33fa645983a8909d9.s3tc.stex"
+path.etc2="res://.import/panel_white_normal.png-b93a9e1cf76ccef33fa645983a8909d9.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://textures/p1x_fab/panel_white_normal.png"
+dest_files=[ "res://.import/panel_white_normal.png-b93a9e1cf76ccef33fa645983a8909d9.s3tc.stex", "res://.import/panel_white_normal.png-b93a9e1cf76ccef33fa645983a8909d9.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

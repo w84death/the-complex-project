@@ -17,7 +17,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 3.23
 shape = SubResource( 1 )
 
 [node name="fabguy" type="MeshInstance" parent="."]
-transform = Transform( -0.156435, 0, -0.987688, 0, 1, 0, 0.987688, 0, -0.156435, 0.866, 0, 0.727 )
+transform = Transform( -0.156435, 0, -0.987688, 0, 1, 0, 0.987688, 0, -0.156435, -0.277759, 0, -0.0458641 )
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
