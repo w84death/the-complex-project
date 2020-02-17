@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shooes.ogg-8e510a377649c8d7af80d514dca8b119.oggstr"
+
+[deps]
+
+source_file="res://audio/shooes.ogg"
+dest_files=[ "res://.import/shooes.ogg-8e510a377649c8d7af80d514dca8b119.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

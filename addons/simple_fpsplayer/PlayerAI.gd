@@ -15,14 +15,17 @@ var flashlight
 var raycast
 var last_rotation_deg = 0
 
-export var AI_personality_movement = 0.5
-export var AI_personality_brave = 1.0
+var AI_personality_movement = 0.5
+var AI_personality_brave = 0.7
+var AI_max_tick_time = 1
+var AI_min_tick_time = .1
 
-export var AI_tick_time = .2
-export var AI_move_speed = 2.5
-export var AI_rot_speed = .1
-export var AI_move_stabilize_factor = .5
-export var AI_rot_stabilize_factor = 0.1
+var AI_move_speed = 2.5
+var AI_rot_speed = 3
+var AI_escape_rot = 6
+var AI_escape_move = -1
+var AI_move_stabilize_factor = .1
+var AI_rot_stabilize_factor = .2
 
 var AI_brain = {
 	move_side = 0.0,
@@ -36,11 +39,12 @@ func _ready():
 	camera = $rotation_helper/camera
 	rotation_helper = $rotation_helper
 	flashlight = $rotation_helper/Flashlight
-	AI_personality_movement = rand_range(0.05, AI_personality_movement)
+	AI_personality_movement = rand_range(0.05, 0.9)
+	AI_personality_brave = rand_range(0.2, 0.7)
+	$AI_tick.wait_time = rand_range(AI_min_tick_time, AI_min_tick_time + AI_max_tick_time - AI_personality_brave)
 	restart_ai_tick()
 	
 func restart_ai_tick():
-	$AI_tick.wait_time = rand_range(AI_tick_time, AI_tick_time * 8)
 	$AI_tick.start()
 	
 func _physics_process(delta):
@@ -58,40 +62,59 @@ func process_input(delta):
 	dir += cam_xform.basis.x.normalized() * input_movement_vector.x
 	apply_ai_rot()
 	
+	process_audio()
+	
+func process_audio():
+	if abs(AI_brain.move_forward) > 0.1 or (AI_brain.move_side) > 0.1:
+		if not $audio_movement.is_playing(): $audio_movement.play()
+	else:
+		if $audio_movement.is_playing(): $audio_movement.stop()
+	
 func AI_decide_move():
-	var decision = randf()
-	if decision < AI_personality_movement:
-		if decision < .2:
-			AI_brain.rotate = rand_range(-1, 1)
-		if decision < 0.50:
-			AI_brain.move_forward += rand_range(1, 5)
-		if decision < 0.75:
-			AI_brain.move_side += rand_range(-.5, .5)
+	if randf() < AI_personality_movement:
+		var decision = randf()
+		if decision < 0.5:
+			AI_brain.rotate += rand_range(-2, 2)
+			
+		if decision < 0.4:
+			AI_brain.move_side += rand_range(-4, 4)
+			
+		if decision >= 0.3 and decision < 0.7:
+			AI_brain.move_forward += rand_range(1, 15)
+		
+		if decision >= 0.7:
+			AI_brain.move_forward *= .5
+			AI_brain.rotate *= .5
 
-
-	
 func apply_ai_movement(vector, delta):
-	if abs(AI_brain.move_forward) >= 0.1:
-		vector.y += AI_move_speed * delta
-	if AI_brain.move_forward < 0: AI_brain.move_forward += AI_move_stabilize_factor
-	if AI_brain.move_forward > 0: AI_brain.move_forward -= AI_move_stabilize_factor
+	var dir = 1
+	if abs(AI_brain.move_forward) > AI_move_stabilize_factor:
+		if AI_brain.move_forward < 0: dir = -1 
+		else: dir = 1
+		vector.y += AI_move_speed * delta * dir
+	if AI_brain.move_forward < AI_move_stabilize_factor: AI_brain.move_forward += AI_move_stabilize_factor
+	if AI_brain.move_forward > AI_move_stabilize_factor: AI_brain.move_forward -= AI_move_stabilize_factor
 	
-	if abs(AI_brain.move_side) >= 0.1:
-		vector.y += AI_move_speed * .25 * delta
-	if AI_brain.move_side < 0: AI_brain.move_side += AI_move_stabilize_factor
-	if AI_brain.move_side > 0: AI_brain.move_side -= AI_move_stabilize_factor
+	if abs(AI_brain.move_side) > AI_move_stabilize_factor:
+		if AI_brain.move_side < 0: dir = -1 
+		else: dir = 1
+		vector.y += AI_move_speed * .25 * delta * dir
+		
+	if AI_brain.move_side < AI_move_stabilize_factor: AI_brain.move_side += AI_move_stabilize_factor
+	if AI_brain.move_side > AI_move_stabilize_factor: AI_brain.move_side -= AI_move_stabilize_factor
 	
 	return vector
 	
 func apply_ai_rot():
-	if AI_brain.rotate < 0.15:
-		AI_brain.rotate -= .1
-	if AI_brain.rotate > 0.15: 
-		AI_brain.rotate += .1
-		
-	if abs(AI_brain.rotate) >= 0.15:
-		self.rotate_y(deg2rad(AI_rot_speed * AI_brain.rotate))
-
+	var dir = 1
+	if abs(AI_brain.rotate) > AI_rot_stabilize_factor:
+		if AI_brain.rotate < 0: dir = -1 
+		else: dir = 1
+		self.rotate_y(deg2rad(AI_rot_speed * dir))
+		if AI_brain.rotate < -AI_rot_stabilize_factor:
+			AI_brain.rotate += AI_rot_stabilize_factor
+		if AI_brain.rotate > AI_rot_stabilize_factor: 
+			AI_brain.rotate -= AI_rot_stabilize_factor
 	
 func process_movement(delta):
 	dir.y = 0
@@ -115,7 +138,14 @@ func process_movement(delta):
 	vel.x = hvel.x
 	vel.z = hvel.z
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
-
+	
+	if get_slide_count() > 1:
+		if randf() > .5:
+			AI_brain.rotate = rand_range(AI_escape_rot*.5, AI_escape_rot)
+		else:
+			AI_brain.rotate = -rand_range(AI_escape_rot*.5, AI_escape_rot)
+		if randf() < .25:
+			AI_brain.move_forward = AI_escape_move
 	
 func _on_AI_tick_timeout():
 	AI_decide_move()

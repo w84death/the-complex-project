@@ -64,7 +64,6 @@ func process_input(delta):
 	if Input.is_action_pressed("movement_right"):
 		input_movement_vector.x += 1
 
-		
 	input_movement_vector = input_movement_vector.normalized()
 
 	dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
@@ -126,6 +125,7 @@ func process_movement(delta):
 	vel.x = hvel.x
 	vel.z = hvel.z
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
+	process_audio(hvel)
 	
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -155,3 +155,9 @@ func get_posrot():
 
 func get_flashlight_status():
 	return $rotation_helper/Flashlight.is_visible_in_tree()
+
+func process_audio(vector):
+	if abs(vector.x) > 0.1 and abs(vector.z) > 0.1 :
+		if not $audio_movement.is_playing(): $audio_movement.play()
+	else:
+		if $audio_movement.is_playing(): $audio_movement.stop()
