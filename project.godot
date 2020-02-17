@@ -406,9 +406,8 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1920
-window/size/height=822
-window/size/fullscreen=true
+window/size/width=1280
+window/size/height=548
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

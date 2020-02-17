@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/simple_fpsplayer/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/simple_fpsplayer/PlayerAI.gd" type="Script" id=2]
+
+[node name="PlayerAI" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="fabguy" parent="." index="1"]
+visible = true
+
+[node name="camera" parent="rotation_helper" index="0"]
+visible = false
+
+[node name="AI_tick" type="Timer" parent="." index="5"]
+one_shot = true
+[connection signal="timeout" from="AI_tick" to="." method="_on_AI_tick_timeout"]

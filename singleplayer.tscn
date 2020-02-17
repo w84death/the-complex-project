@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/fablab_a1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/simple_fpsplayer/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://materials/environment_dark.tres" type="Environment" id=4]
 
 [node name="main" type="Spatial"]
@@ -12,9 +11,4 @@
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.813277, 1.43284, 7.57827 )
-
 [node name="fablab_a1" parent="." instance=ExtResource( 2 )]
-
-[editable path="Player"]

@@ -104,12 +104,6 @@ func process_input(delta):
 		invert_mouse()
 # ----------------------------------
 
-# ----------------------------------
-# Help
-	if Input.is_key_pressed(KEY_H):
-		$'../GUI'.toggle_help()
-# ----------------------------------
-
 func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()
