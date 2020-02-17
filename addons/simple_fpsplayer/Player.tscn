@@ -17,7 +17,8 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 3.23
 shape = SubResource( 1 )
 
 [node name="fabguy" type="MeshInstance" parent="."]
-transform = Transform( -0.156435, 0, -0.987688, 0, 1, 0, 0.987688, 0, -0.156435, -0.277759, 0, -0.0458641 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+visible = false
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
@@ -27,11 +28,11 @@ material/2 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1215, 0 )
 
 [node name="camera" parent="rotation_helper" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.644858 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0701517 )
 fov = 90.0
 
 [node name="Flashlight" type="SpotLight" parent="rotation_helper"]
-transform = Transform( 0.999071, 3.25963e-09, 0.0430964, 0.00365943, 0.996388, -0.0848338, -0.0429408, 0.0849127, 0.995463, 1.07774, -1.35592, -0.667039 )
+transform = Transform( 0.999071, 6.98146e-09, 0.0430964, 0.00365943, 0.996388, -0.0848339, -0.0429408, 0.0849127, 0.995463, 1.15923, -2.57369, -0.667039 )
 visible = false
 light_color = Color( 1, 0.980392, 0.815686, 1 )
 light_energy = 24.0

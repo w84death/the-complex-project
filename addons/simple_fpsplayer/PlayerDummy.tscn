@@ -6,6 +6,9 @@
 [node name="PlayerDummy" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 
+[node name="fabguy" parent="." index="1"]
+visible = true
+
 [node name="camera" parent="rotation_helper" index="0"]
 visible = false
 current = false
