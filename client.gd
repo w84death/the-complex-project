@@ -123,7 +123,7 @@ func _on_btn_connect_pressed():
 	
 func spawn_player(id):
 	player_node = player.instance()
-	player_node.translation = Vector3(0,0,0)
+	player_node.translation = $level/start.translation
 	player_node.get_node("rotation_helper/camera").make_current()
 	player_node.multiplayer_id = id
 	add_child(player_node)

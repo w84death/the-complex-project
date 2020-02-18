@@ -2,7 +2,7 @@
 
 [ext_resource path="res://gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://multiplayer_gui.gd" type="Script" id=2]
-[ext_resource path="res://maps/hangar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://maps/fablab_multi.tscn" type="PackedScene" id=3]
 [ext_resource path="res://client.gd" type="Script" id=6]
 [ext_resource path="res://vendors/p1x/camera_3d_effects/camera.tscn" type="PackedScene" id=7]
 
@@ -18,18 +18,18 @@ script = ExtResource( 6 )
 visible = true
 
 [node name="addres" parent="Client/GUI/info/network/setup" index="0"]
-margin_left = 25.0
-margin_right = 153.0
+margin_left = 0.0
+margin_right = 128.0
 margin_bottom = 52.0
 
 [node name="port" parent="Client/GUI/info/network/setup" index="1"]
-margin_left = 157.0
-margin_right = 253.0
+margin_left = 140.0
+margin_right = 236.0
 margin_bottom = 52.0
 
 [node name="btn_connect" parent="Client/GUI/info/network/setup" index="2"]
-margin_left = 257.0
-margin_right = 323.0
+margin_left = 248.0
+margin_right = 348.0
 margin_bottom = 52.0
 
 [node name="help" parent="Client/GUI/info" index="2"]
@@ -42,17 +42,17 @@ visible = true
 [node name="cameras" type="Spatial" parent="Client"]
 
 [node name="camera1" parent="Client/cameras" instance=ExtResource( 7 )]
-transform = Transform( -0.793598, -0.38613, 0.470218, -0.00523557, 0.777128, 0.62932, -0.608419, 0.496966, -0.618749, 7.06996, 21.6067, -28.6293 )
-
-[node name="hangar" parent="Client" instance=ExtResource( 5 )]
-
-[node name="start" type="Position3D" parent="Client/hangar"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.23785, 0 )
+transform = Transform( 0.639525, 0.486407, -0.595328, -0.00523557, 0.777128, 0.62932, 0.768752, -0.399349, 0.499539, 15.103, 2.573, -35.069 )
 
 [node name="tick" type="Timer" parent="Client"]
 wait_time = 0.033
 
 [node name="players" type="Node" parent="Client"]
+
+[node name="level" parent="Client" instance=ExtResource( 3 )]
+
+[node name="start" type="Position3D" parent="Client/level"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7348, -1.12333, -24.192 )
 [connection signal="pressed" from="Client/GUI/info/network/setup/btn_connect" to="Client" method="_on_btn_connect_pressed"]
 [connection signal="timeout" from="Client/tick" to="Client" method="_on_tick_timeout"]
 
