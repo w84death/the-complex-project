@@ -11,5 +11,5 @@ dest_files=[ "res://.import/keypad.ogg-4f9f54399694514773f74b4b1b40d90f.oggstr" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

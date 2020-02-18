@@ -16,7 +16,7 @@ export(String) var map = CATEGORY_STRING
 
 # .map Resource to auto-load when updating the map from the editor
 # (Works around references being held and preventing refresh on reimport)
-export(String, FILE, '*.map') var map_file
+export(String, FILE, '*.map') var map_file setget set_map_file
 
 # Factor to scale the .map file's quake units down by
 # (16 is a best-effort conversion from Quake 3 units to metric)
@@ -79,6 +79,10 @@ export(String) var materials = CATEGORY_STRING
 export(String) var material_extension = '.tres'
 export (SpatialMaterial) var default_material
 
+# Entity defintions
+export(String) var entities = CATEGORY_STRING
+export(Resource) var entity_definitions
+
 # Threads
 export(String) var threading = CATEGORY_STRING
 export(int) var max_build_threads = 4
@@ -92,18 +96,31 @@ var build_profiler = null
 func set_reload(new_reload = true):
 	if reload != new_reload:
 		if Engine.is_editor_hint():
-			if build_thread.is_active():
-				print("Skipping reload: Build in progress")
-				return
+			reload()
 
-			clear_map()
+func reload(ignore = null):
+	if build_thread.is_active():
+		print("Skipping reload: Build in progress")
+		return
 
-			if not map_file:
-				print("Skipping reload: No map file")
-				return
+	clear_map()
 
-			build_profiler = QodotProfiler.new()
-			build_thread.start(self, "build_map", map_file)
+	if not map_file:
+		print("Skipping reload: No map file")
+		return
+
+	build_profiler = QodotProfiler.new()
+	build_thread.start(self, "build_map", map_file)
+
+func set_map_file(new_map_file: String):
+	if(map_file != new_map_file):
+		map_file = new_map_file
+
+func set_texture_wads(new_texture_wads):
+	var tw = Array(new_texture_wads)
+	if(texture_wads != tw):
+		texture_wads = tw
+		print(texture_wads)
 
 func print_log(msg):
 	if(print_to_log):
@@ -153,6 +170,17 @@ func build_map(map_file: String) -> void:
 		"inverse_scale_factor": inverse_scale_factor
 	}
 
+	# Loading entity defintions
+	var entity_set = {}
+	print_log("\nLoading entity definition set...")
+	if entity_definitions != null:
+		entity_set = entity_definitions.get_point_entity_scene_map()
+		for key in entity_set.keys():
+			if entity_set[key] == "":
+				print("WARNING: No scene file set for entity classname: %s, Position3Ds will be used instead" % key)
+				entity_set.erase(key) #erasing it to avoid errors further down the line
+	context["entity_definition_set"] = entity_set
+
 	# Initialize thread pool
 	print_log("\nInitializing Thread Pool...")
 	var thread_init_profiler = QodotProfiler.new()
@@ -180,6 +208,7 @@ func build_map(map_file: String) -> void:
 		var job_profiler = QodotProfiler.new()
 		thread_pool.start_thread_jobs()
 		var results = yield(thread_pool, "jobs_complete")
+
 		add_context_results(context, results)
 		var job_duration = job_profiler.finish()
 		print_log("Done in " + String(job_duration * 0.001) + " seconds.\n")
@@ -341,6 +370,10 @@ func add_context_nodes_recursive(context: Dictionary, context_key: String, nodes
 				context[context_key] = {
 					'children': {}
 				}
+			var is_instanced_scene = false
+			if node is QodotBuildEntitySpawns.InstancedScene:
+				node = node.wrapped_node
+				is_instanced_scene = true
 
 			context[context_key]['children'][node_key] = {
 				'node': node,
@@ -352,7 +385,10 @@ func add_context_nodes_recursive(context: Dictionary, context_key: String, nodes
 			else:
 				add_child(node)
 
-			recursive_set_owner(node, get_tree().get_edited_scene_root())
+			if is_instanced_scene:
+				node.owner = get_tree().get_edited_scene_root()
+			else:
+				recursive_set_owner(node, get_tree().get_edited_scene_root())
 
 
 # Queues a build step for execution
@@ -417,6 +453,7 @@ func run_finalize_step(context: Dictionary, build_step: QodotBuildStep) -> void:
 	for build_step_param_name in build_step.get_finalize_params():
 		if not build_step_param_name in context:
 			print("Error: Requested parameter " + build_step_param_name + " not present in context for build step " + build_step.get_name())
+			continue
 		step_context[build_step_param_name] = context[build_step_param_name]
 
 	print_log("Finalizing " + build_step.get_name() + "...")

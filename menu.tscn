@@ -442,17 +442,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn_invert" type="CheckButton" parent="GUI/center/settings/menu"]
-margin_top = 168.0
+[node name="Label" type="Label" parent="GUI/center/settings/menu"]
+margin_top = 18.0
 margin_right = 208.0
-margin_bottom = 208.0
+margin_bottom = 177.0
+text = "No more settings at the moment. 
+Graphics are set to max as Godot enables.
+
+I'm using: 2070 RTX/i7 with 60fps.
+"
+autowrap = true
+
+[node name="btn_invert" type="CheckButton" parent="GUI/center/settings/menu"]
+margin_top = 189.0
+margin_right = 208.0
+margin_bottom = 229.0
 rect_min_size = Vector2( 0, 40 )
 text = "INVERT LOOK"
 
 [node name="btn_back" type="Button" parent="GUI/center/settings/menu"]
-margin_top = 220.0
+margin_top = 241.0
 margin_right = 208.0
-margin_bottom = 252.0
+margin_bottom = 273.0
 rect_min_size = Vector2( 0, 32 )
 text = "BACK"
 __meta__ = {
@@ -467,7 +478,7 @@ anchor_bottom = 0.5
 margin_left = -1280.0
 margin_top = -128.0
 margin_right = -1024.0
-margin_bottom = 32.0
+margin_bottom = 74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -484,24 +495,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn_startgame" type="Button" parent="GUI/center/single/menu"]
+[node name="btn_a1" type="Button" parent="GUI/center/single/menu"]
 margin_right = 208.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 0, 32 )
-text = "START NEW GAME"
+text = "FAB LAB A1"
 
-[node name="btn_continue" type="Button" parent="GUI/center/single/menu"]
+[node name="btn_a2" type="Button" parent="GUI/center/single/menu"]
 margin_top = 44.0
 margin_right = 208.0
 margin_bottom = 76.0
 rect_min_size = Vector2( 0, 32 )
-disabled = true
-text = "CONTINUE"
+text = "FAB LAB A2"
 
-[node name="btn_single_back" type="Button" parent="GUI/center/single/menu"]
+[node name="Container" type="Container" parent="GUI/center/single/menu"]
 margin_top = 88.0
 margin_right = 208.0
-margin_bottom = 120.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="btn_single_back" type="Button" parent="GUI/center/single/menu"]
+margin_top = 124.0
+margin_right = 208.0
+margin_bottom = 156.0
 rect_min_size = Vector2( 0, 32 )
 text = "BACK"
 __meta__ = {
@@ -544,5 +560,6 @@ anims/demo = SubResource( 6 )
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_settings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_quit" to="." method="_on_btn_quit_pressed"]
 [connection signal="pressed" from="GUI/center/settings/menu/btn_back" to="." method="_on_btn_back_pressed"]
-[connection signal="pressed" from="GUI/center/single/menu/btn_startgame" to="." method="_on_btn_startgame_pressed"]
+[connection signal="pressed" from="GUI/center/single/menu/btn_a1" to="." method="_on_btn_a1_pressed"]
+[connection signal="pressed" from="GUI/center/single/menu/btn_a2" to="." method="_on_btn_a2_pressed"]
 [connection signal="pressed" from="GUI/center/single/menu/btn_single_back" to="." method="_on_btn_single_back_pressed"]

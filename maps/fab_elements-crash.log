@@ -1,0 +1,28 @@
+Renderer info: GeForce RTX 2070 with Max-Q Design/PCIe/SSE2 version 4.6.0 NVIDIA 440.59 from NVIDIA Corporation
+Depth buffer bits: 24
+Multisampling enabled
+Adding file system path /home/kj/Nextcloud/Gamedev/quake/id1
+Adding file system package PAK0.PAK
+Loading document from /home/kj/Nextcloud/Gamedev/godot/the-complex-project/maps/fablab_tunnel_a2.map
+Loaded entity definition file Quake.fgd
+Loading palette file gfx/palette.lmp
+Loaded texture collection '../textures/p1x_fab.wad'
+Renderer info: GeForce RTX 2070 with Max-Q Design/PCIe/SSE2 version 4.6.0 NVIDIA 440.59 from NVIDIA Corporation
+Depth buffer bits: 24
+Multisampling enabled
+Adding file system path /home/kj/Nextcloud/Gamedev/quake/id1
+Adding file system package PAK0.PAK
+Loading document from /home/kj/Nextcloud/Gamedev/godot/the-complex-project/maps/fablab_a2.map
+Loaded entity definition file Quake.fgd
+Loading palette file gfx/palette.lmp
+Loaded texture collection '../textures/p1x_fab.wad'
+Created autosave backup at /home/kj/Nextcloud/Gamedev/godot/the-complex-project/maps/autosave/fablab_a2.14.map
+Could not load model maps/b_exbox2.bsp: File not found: 'maps/b_exbox2.bsp'
+Could not load model progs/teleport.mdl: File not found: 'progs/teleport.mdl'
+Could not load model progs/enforcer.mdl: File not found: 'progs/enforcer.mdl'
+Could not load model progs/fish.mdl: File not found: 'progs/fish.mdl'
+Could not load model progs/hknight.mdl: File not found: 'progs/hknight.mdl'
+Could not load model progs/oldone.mdl: File not found: 'progs/oldone.mdl'
+Could not load model progs/shalrath.mdl: File not found: 'progs/shalrath.mdl'
+Could not load model progs/tarbaby.mdl: File not found: 'progs/tarbaby.mdl'
+Saved /home/kj/Nextcloud/Gamedev/godot/the-complex-project/maps/fablab_a2.map

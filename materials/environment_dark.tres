@@ -21,6 +21,7 @@ tonemap_mode = 2
 tonemap_exposure = 1.35
 tonemap_white = 1.4
 ss_reflections_enabled = true
+ss_reflections_max_steps = 96
 ssao_enabled = true
 ssao_radius = 2.0
 ssao_intensity = 2.0

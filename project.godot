@@ -214,6 +214,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/nodes/qodot_entity.gd"
 }, {
+"base": "Resource",
+"class": "QodotEntityDefinitionSet",
+"language": "GDScript",
+"path": "res://addons/qodot/src/resources/qodot_entity_definition_set.gd"
+}, {
 "base": "QodotSpatial",
 "class": "QodotMap",
 "language": "GDScript",
@@ -233,6 +238,11 @@ _global_script_classes=[ {
 "class": "QodotPlugin",
 "language": "GDScript",
 "path": "res://addons/qodot/src/qodot_plugin.gd"
+}, {
+"base": "Resource",
+"class": "QodotPointEntityDefinition",
+"language": "GDScript",
+"path": "res://addons/qodot/src/resources/qodot_point_entity_definition.gd"
 }, {
 "base": "Reference",
 "class": "QodotPrinter",
@@ -371,10 +381,12 @@ _global_script_class_icons={
 "QodotBuildUnwrapUVs": "",
 "QodotDebugPipeline": "",
 "QodotEntity": "",
+"QodotEntityDefinitionSet": "",
 "QodotMap": "",
 "QodotMeshPerMaterialPipeline": "",
 "QodotNode": "res://addons/qodot/icons/icon_qodot_node.svg",
 "QodotPlugin": "",
+"QodotPointEntityDefinition": "",
 "QodotPrinter": "",
 "QodotProfiler": "",
 "QodotSingleMeshAtlasedPipeline": "",
@@ -457,9 +469,9 @@ shoot={
 [rendering]
 
 threads/thread_model=2
-quality/filters/anisotropic_filter_level=8
+quality/filters/anisotropic_filter_level=16
 quality/shadows/filter_mode=2
 quality/subsurface_scattering/quality=2
 quality/voxel_cone_tracing/high_quality=true
-quality/filters/msaa=1
-environment/default_environment="res://default_env.tres"
+quality/filters/msaa=2
+environment/default_environment="res://materials/environment_dark.tres"

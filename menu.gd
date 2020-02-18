@@ -33,3 +33,11 @@ func _on_btn_single_back_pressed():
 
 func _on_btn_startgame_pressed():
 	self.get_tree().change_scene("res://singleplayer.tscn")
+
+
+func _on_btn_a1_pressed():
+	self.get_tree().change_scene("res://levels/fab_a1.tscn")
+
+
+func _on_btn_a2_pressed():
+	self.get_tree().change_scene("res://levels/fab_a2.tscn")

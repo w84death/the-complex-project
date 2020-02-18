@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://audio/noise4.ogg" type="AudioStream" id=1]
+
+[node name="machine_noise" type="AudioStreamPlayer3D"]
+stream = ExtResource( 1 )
+unit_size = 10.5
+autoplay = true
