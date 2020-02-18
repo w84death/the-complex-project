@@ -11,6 +11,7 @@ visible = true
 
 [node name="camera" parent="rotation_helper" index="0"]
 visible = false
+current = false
 
 [node name="AI_tick" type="Timer" parent="." index="5"]
 one_shot = true
