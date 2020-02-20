@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/puppet.map-9e665476db6cc606308697a78ce2e86e.tres"
+
+[deps]
+
+source_file="res://maps/puppet.map"
+dest_files=[ "res://.import/puppet.map-9e665476db6cc606308697a78ce2e86e.tres" ]
+
+[params]
+

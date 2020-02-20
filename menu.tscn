@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( -0.51, 6.131, -2.192 ) ]
+"values": [ Vector3( 3.24432, 6.97341, -20.4959 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
@@ -83,7 +83,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -0.51, 6.131, -2.192 ), Vector3( 3.221, 1.41, 1.915 ) ]
+"values": [ Vector3( 3.24432, 6.97341, -20.4959 ), Vector3( 4.49826, 4.21832, -17.4974 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
@@ -95,7 +95,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -10.617, -88.787, 0 ), Vector3( 25.513, -243.206, 0 ) ]
+"values": [ Vector3( -10.617, -88.787, 0 ), Vector3( 20.364, -232, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("GUI/center/Panel:rect_position")
@@ -131,10 +131,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -0.51, 6.131, -2.192 ), Vector3( 3.977, 9.187, -7.505 ) ]
+"values": [ Vector3( 3.24432, 6.97341, -20.4959 ), Vector3( 4.31539, 8.17537, -23.219 ), Vector3( 5.38647, 10.4139, -25.9422 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
@@ -143,10 +143,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -10.617, -88.787, 0 ), Vector3( -46.499, 10.726, 42 ) ]
+"values": [ Vector3( -10.617, -88.787, 0 ), Vector3( -10.8889, -43.9404, 7.15454 ), Vector3( -46.499, 10.726, 42 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("GUI/center/Panel:rect_size")
@@ -193,10 +193,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0, 0.4, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 3.221, 1.41, 1.915 ), Vector3( 1.953, 5.658, 1.852 ), Vector3( -0.51, 6.131, -2.192 ) ]
+"values": [ Vector3( 5.1527, 2.95063, -19.092 ), Vector3( 3.41122, 3.98851, -20.6761 ), Vector3( 3.24432, 6.97341, -20.4959 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
@@ -205,10 +205,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 25.513, -243.206, 0 ), Vector3( 6, -355, 0 ), Vector3( -10.617, -448.787, 0 ) ]
+"values": [ Vector3( 25.513, -232, 0 ), Vector3( -10.617, -88.787, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("GUI/center/Panel:rect_position")
@@ -244,10 +244,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 3.977, 9.187, -7.505 ), Vector3( -0.51, 6.131, -2.192 ) ]
+"values": [ Vector3( 5.38647, 10.4139, -25.9422 ), Vector3( 3.20374, 11.8587, -23.7637 ), Vector3( 3.24432, 6.97341, -20.4959 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("camera_3d_effects:rotation_degrees")
@@ -256,10 +256,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -46.499, 10.726, 42 ), Vector3( -10.617, -88.787, 0 ) ]
+"values": [ Vector3( -46.499, 10.726, 42 ), Vector3( -54.2818, -80.6223, 21.0058 ), Vector3( -10.617, -88.787, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("GUI/center/single:rect_position")
@@ -289,30 +289,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=6]
 length = 8.0
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("fablab_menu:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("fablab_menu:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.9, 4, 6.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 1.1, 0, 0.878 ), Vector3( -1.1, 1.034, -0.635 ), Vector3( -0.424, -0.688, -1.055 ) ]
-}
 
 [node name="menu" type="Node"]
 script = ExtResource( 1 )
@@ -422,9 +398,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 1280.0
+margin_left = -1280.0
 margin_top = -128.0
-margin_right = 1536.0
+margin_right = -1024.0
 margin_bottom = 172.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -443,9 +419,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="GUI/center/settings/menu"]
-margin_top = 18.0
 margin_right = 208.0
-margin_bottom = 177.0
+margin_bottom = 159.0
 text = "No more settings at the moment. 
 Graphics are set to max as Godot enables.
 
@@ -454,16 +429,16 @@ I'm using: 2070 RTX/i7 with 60fps.
 autowrap = true
 
 [node name="btn_invert" type="CheckButton" parent="GUI/center/settings/menu"]
-margin_top = 189.0
+margin_top = 171.0
 margin_right = 208.0
-margin_bottom = 229.0
+margin_bottom = 211.0
 rect_min_size = Vector2( 0, 40 )
 text = "INVERT LOOK"
 
 [node name="btn_back" type="Button" parent="GUI/center/settings/menu"]
-margin_top = 241.0
+margin_top = 223.0
 margin_right = 208.0
-margin_bottom = 273.0
+margin_bottom = 255.0
 rect_min_size = Vector2( 0, 32 )
 text = "BACK"
 __meta__ = {
@@ -537,11 +512,8 @@ __meta__ = {
 
 [node name="fps" parent="GUI" instance=ExtResource( 6 )]
 
-[node name="fablab_menu" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.999954, -0.00836259, 0.00472762, 0.00840554, 0.999923, -0.00913927, -0.00465083, 0.00917859, 0.999947, 0, 0, 0 )
-
 [node name="camera_3d_effects" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0211691, 0.184202, -0.98266, 0, 0.98288, 0.184243, 0.999776, -0.00390026, 0.0208067, -0.51, 6.131, -2.192 )
+transform = Transform( 0.0211691, 0.184202, -0.98266, 0, 0.982881, 0.184243, 0.999776, -0.00390026, 0.0208067, 3.24432, 6.97341, -20.4959 )
 
 [node name="menu_anim" type="AnimationPlayer" parent="."]
 autoplay = "menu"
@@ -555,6 +527,8 @@ anims/single_back = SubResource( 5 )
 autoplay = "demo"
 playback_speed = 0.25
 anims/demo = SubResource( 6 )
+
+[node name="menu" parent="." instance=ExtResource( 5 )]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_start_game" to="." method="_on_btn_start_game_pressed"]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_join" to="." method="_on_btn_join_pressed"]
 [connection signal="pressed" from="GUI/center/Panel/menu/btn_settings" to="." method="_on_btn_settings_pressed"]

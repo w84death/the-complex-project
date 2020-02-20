@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
+[ext_resource path="res://addons/simple_fpsplayer/Player.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+class_options = "----------------------------------------------------------------"
+classname = "player_human"
+description = "Player Human"
+class_properties = {
+"angle": 0.0,
+"spawnflags": [ [ "Not on Easy", 256, false ], [ "Not on Normal", 512, false ], [ "Not on Hard", 1024, false ], [ "Not in Deathmatch", 2048, false ] ]
+}
+class_property_descriptions = {
+"angle": "Rotation Angle"
+}
+meta_properties = {
+"size": AABB( -8, -8, -8, 8, 8, 8 )
+}
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource( 2 )
+scripting = "----------------------------------------------------------------"

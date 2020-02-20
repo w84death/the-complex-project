@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
+[ext_resource path="res://addons/qodot/game-definitions/fgd/point_classes/light.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+class_options = "----------------------------------------------------------------"
+classname = "light"
+description = "Invisible light source"
+class_properties = {
+"angle": 0.0
+}
+class_property_descriptions = {
+"angle": "Rotation Angle"
+}
+meta_properties = {
+"base": "Light",
+"size": AABB( -8, -8, -8, 8, 8, 8 )
+}
+scene = "----------------------------------------------------------------"
+scripting = "----------------------------------------------------------------"
+script_class = ExtResource( 2 )

@@ -1,0 +1,9 @@
+[gd_resource type="GDNativeLibrary" format=2]
+
+[resource]
+entry/Windows.64 = "res://addons/qodot/bin/win64/libqodot.dll"
+entry/OSX.64 = "res://addons/qodot/bin/osx/libqodot.dylib"
+entry/X11.64 = "res://addons/qodot/bin/x11/libqodot.so"
+dependency/Windows.64 = [ "res://addons/qodot/bin/win64/libmap.dll" ]
+dependency/OSX.64 = [ "res://addons/qodot/bin/osx/libmap.dylib" ]
+dependency/X11.64 = [ "res://addons/qodot/bin/x11/libmap.so" ]
