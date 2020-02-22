@@ -41,3 +41,7 @@ func _on_btn_a1_pressed():
 
 func _on_btn_a2_pressed():
 	self.get_tree().change_scene("res://levels/fab_a2.tscn")
+
+
+func _on_btn_a0_pressed():
+	self.get_tree().change_scene("res://levels/fab_a0.tscn")

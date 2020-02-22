@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/heli.map-5e0ed920fca77c63e6b2447b0c9668b9.tres"
+
+[deps]
+
+source_file="res://maps/heli.map"
+dest_files=[ "res://.import/heli.map-5e0ed920fca77c63e6b2447b0c9668b9.tres" ]
+
+[params]
+

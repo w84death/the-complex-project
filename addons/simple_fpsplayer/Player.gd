@@ -3,6 +3,8 @@ extends KinematicBody
 var global = "root/global"
 var multiplayer_id = 0
 
+export var stoned = true
+
 var is_player = true
 const GRAVITY = -64.8
 var vel = Vector3()
@@ -104,6 +106,7 @@ func process_input(delta):
 # ----------------------------------
 
 func process_movement(delta):
+	if stoned: return
 	dir.y = 0
 	dir = dir.normalized()
 
@@ -128,6 +131,7 @@ func process_movement(delta):
 	process_audio(hvel)
 	
 func _input(event):
+	if stoned: return
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * MOUSE_INVERSION))
 		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))

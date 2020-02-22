@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/helicopter_onpad_loop.ogg-13d222412c0f22992bda7014eca40a60.oggstr"
+
+[deps]
+
+source_file="res://audio/helicopter_onpad_loop.ogg"
+dest_files=[ "res://.import/helicopter_onpad_loop.ogg-13d222412c0f22992bda7014eca40a60.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

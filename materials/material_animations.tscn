@@ -1,0 +1,184 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://textures/light_white.material" type="Material" id=1]
+[ext_resource path="res://animations/ligh_blink.anim" type="Animation" id=2]
+[ext_resource path="res://animations/light_fade.anim" type="Animation" id=3]
+[ext_resource path="res://textures/machine_belt.material" type="Material" id=4]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="PlaneMesh" id=2]
+
+[sub_resource type="AnimationNodeAdd2" id=3]
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "computers_monitors"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "machine_belt"
+
+[sub_resource type="AnimationNodeAdd2" id=6]
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "ligh_blink"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "chain"
+
+[sub_resource type="AnimationNodeAdd2" id=9]
+
+[sub_resource type="AnimationNodeBlend2" id=10]
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "light_fade"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "machine_blinks"
+
+[sub_resource type="AnimationNodeAdd2" id=13]
+
+[sub_resource type="AnimationNodeBlendTree" id=14]
+graph_offset = Vector2( 0, -33.1739 )
+nodes/Add2/node = SubResource( 3 )
+nodes/Add2/position = Vector2( 640, 140 )
+nodes/Animation/node = SubResource( 4 )
+nodes/Animation/position = Vector2( 320, 320 )
+"nodes/belt move/node" = SubResource( 5 )
+"nodes/belt move/position" = Vector2( 900, 400 )
+nodes/belts/node = SubResource( 6 )
+nodes/belts/position = Vector2( 1180, 280 )
+nodes/blinking/node = SubResource( 7 )
+nodes/blinking/position = Vector2( 200, 80 )
+nodes/chain/node = SubResource( 8 )
+nodes/chain/position = Vector2( 1220, 480 )
+nodes/chained/node = SubResource( 9 )
+nodes/chained/position = Vector2( 1439.08, 376.373 )
+nodes/errors/node = SubResource( 10 )
+nodes/errors/position = Vector2( 440, 80 )
+nodes/fade/node = SubResource( 11 )
+nodes/fade/position = Vector2( 200, 200 )
+"nodes/machine blink/node" = SubResource( 12 )
+"nodes/machine blink/position" = Vector2( 620, 360 )
+"nodes/machine leds/node" = SubResource( 13 )
+"nodes/machine leds/position" = Vector2( 880, 200 )
+nodes/output/position = Vector2( 1620, 280 )
+node_connections = [ "output", 0, "chained", "Add2", 0, "errors", "Add2", 1, "Animation", "chained", 0, "belts", "chained", 1, "chain", "errors", 0, "blinking", "errors", 1, "fade", "belts", 0, "machine leds", "belts", 1, "belt move", "machine leds", 0, "Add2", "machine leds", 1, "machine blink" ]
+
+[sub_resource type="Animation" id=15]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../QodotMap/Meshes/MaterialsMesh:mesh:surface_27/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../QodotMap/Meshes/MaterialsMesh:mesh:surface_5/material:emission_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.92, 0.95 ]
+}
+
+[sub_resource type="Animation" id=17]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../QodotMap/Meshes/MaterialsMesh:mesh:surface_12/material:emission_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 7.6218 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../QodotMap/Meshes/MaterialsMesh:mesh:surface_15/material:emission_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 11.0 ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../QodotMap/Meshes/MaterialsMesh:mesh:surface_25/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../QodotMap/Meshes/MaterialsMesh:mesh:surface_6/material:emission_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 8.0, 8.0, 0.0, 8.0, 0.0, 8.0, 0.0, 8.0 ]
+}
+
+[node name="material_animations" type="Node"]
+
+[node name="light_white" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+
+[node name="machine_belt" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 4 )
+
+[node name="AnimationTreePlayer" type="AnimationTree" parent="."]
+tree_root = SubResource( 14 )
+anim_player = NodePath("AnimationPlayer")
+parameters/Add2/add_amount = 1.0
+parameters/belts/add_amount = 1.0
+parameters/chained/add_amount = 1.0
+parameters/errors/blend_amount = 0.74
+"parameters/machine leds/add_amount" = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTreePlayer"]
+anims/chain = SubResource( 15 )
+anims/computers_monitors = SubResource( 16 )
+anims/ligh_blink = ExtResource( 2 )
+anims/light_fade = ExtResource( 3 )
+anims/light_normal = SubResource( 17 )
+anims/machine_belt = SubResource( 18 )
+anims/machine_blinks = SubResource( 19 )
