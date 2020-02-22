@@ -11,20 +11,20 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "heli"
-"_tb_id" "31"
+"_tb_id" "300"
 }
 // entity 2
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "body"
-"_tb_id" "32"
-"_tb_group" "31"
+"_tb_id" "301"
+"_tb_group" "300"
 }
 // entity 3
 {
 "classname" "wall"
-"_tb_group" "32"
+"_tb_group" "301"
 // brush 0
 {
 ( -328 16 120 ) ( -328 16 136 ) ( -328 -16 136 ) metal_black -0 8 -0 1 1
@@ -602,7 +602,7 @@
 // entity 4
 {
 "classname" "wall"
-"_tb_group" "32"
+"_tb_group" "301"
 // brush 0
 {
 ( -32 -24 208 ) ( -32 -23 208 ) ( -32 -24 209 ) metal_black -0 -32 -0 1 1
@@ -622,14 +622,14 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "rotors"
-"_tb_id" "33"
-"_tb_group" "31"
+"_tb_id" "302"
+"_tb_group" "300"
 }
 // entity 6
 {
 "classname" "rotate"
 "speed" "720"
-"_tb_group" "33"
+"_tb_group" "302"
 // brush 0
 {
 ( -323.02571205168164 90.54950104311925 224 ) ( -327.16681677332195 75.094687822494166 220 ) ( -327.16681677332195 75.094687822494166 216 ) metal_red -37.7437 -24 -0 0.965926 1
@@ -784,14 +784,14 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "rotor small"
-"_tb_id" "34"
+"_tb_id" "303"
 }
 // entity 8
 {
 "classname" "rotate"
 "axis" "1 0 0"
-"speed" "720"
-"_tb_group" "34"
+"speed" "1440"
+"_tb_group" "303"
 // brush 0
 {
 ( -340 16 84 ) ( -340 17 84 ) ( -340 16 85 ) metal_red 24 -0 -0 1 1

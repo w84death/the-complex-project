@@ -3,7 +3,7 @@ extends KinematicBody
 var global = "root/global"
 var multiplayer_id = 0
 
-export var stoned = true
+export var stoned = false
 
 var is_player = true
 const GRAVITY = -64.8
@@ -39,6 +39,9 @@ func _ready():
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	add_to_group("can_open_door")
+	add_to_group("player")
+
 
 func _physics_process(delta):
 	process_input(delta)

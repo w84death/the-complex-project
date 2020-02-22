@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" type="Script" id=1]
+[ext_resource path="res://game-definitions/fgd/solid_classes/button_open_door.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 1 )
+class_options = "----------------------------------------------------------------"
+classname = "button_door"
+description = "Button for doors"
+class_properties = {
+
+}
+class_property_descriptions = {
+
+}
+meta_properties = {
+
+}
+spawn = "----------------------------------------------------------------"
+spawn_type = 2
+visual_build = "----------------------------------------------------------------"
+build_visuals = true
+collision_build = "----------------------------------------------------------------"
+physics_body_type = 3
+collision_shape_type = 1
+scripting = "----------------------------------------------------------------"
+script_class = ExtResource( 2 )

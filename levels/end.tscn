@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://maps/end.tscn" type="PackedScene" id=1]
+[ext_resource path="res://singleplayer.tscn" type="PackedScene" id=2]
+
+[node name="end" instance=ExtResource( 2 )]
+
+[node name="fps" parent="GUI" index="0"]
+visible = false
+
+[node name="aim" parent="GUI/center" index="0"]
+visible = false
+
+[node name="end" parent="." index="2" instance=ExtResource( 1 )]
+
+[editable path="GUI"]

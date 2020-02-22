@@ -346,7 +346,7 @@ properties = {
 [node name="entity_1_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 2 )
 properties = {
-"_tb_id": "31",
+"_tb_id": "300",
 "_tb_name": "heli",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -356,8 +356,8 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000178329, 6.40104, -2.55742 )
 script = ExtResource( 2 )
 properties = {
-"_tb_group": "31",
-"_tb_id": "32",
+"_tb_group": "300",
+"_tb_id": "301",
 "classname": "wall"
 }
 
@@ -365,8 +365,8 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000178329, -6.40104, 2.55742 )
 script = ExtResource( 2 )
 properties = {
-"_tb_group": "31",
-"_tb_id": "32",
+"_tb_group": "300",
+"_tb_id": "301",
 "_tb_name": "body",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -531,8 +531,8 @@ shape = SubResource( 50 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.75, -1 )
 script = ExtResource( 2 )
 properties = {
-"_tb_group": "31",
-"_tb_id": "32",
+"_tb_group": "300",
+"_tb_id": "301",
 "classname": "wall"
 }
 
@@ -550,8 +550,8 @@ shape = SubResource( 52 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352709, 13.6914, -0.793462 )
 script = ExtResource( 7 )
 properties = {
-"_tb_group": "31",
-"_tb_id": "33",
+"_tb_group": "300",
+"_tb_id": "302",
 "classname": "rotate",
 "speed": "720"
 }
@@ -560,8 +560,8 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352709, -13.6914, 0.793462 )
 script = ExtResource( 2 )
 properties = {
-"_tb_group": "31",
-"_tb_id": "33",
+"_tb_group": "300",
+"_tb_id": "302",
 "_tb_name": "rotors",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -628,17 +628,17 @@ shape = SubResource( 69 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.125, 7.95833, -21 )
 script = ExtResource( 7 )
 properties = {
-"_tb_id": "34",
+"_tb_id": "303",
 "axis": "1 0 0",
 "classname": "rotate",
-"speed": "720"
+"speed": "1440"
 }
 
 [node name="entity_7_func_group" type="Spatial" parent="QodotMap/entity_8_rotate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.125, -7.95833, 21 )
 script = ExtResource( 2 )
 properties = {
-"_tb_id": "34",
+"_tb_id": "303",
 "_tb_name": "rotorsmall",
 "_tb_type": "_tb_group",
 "classname": "func_group"

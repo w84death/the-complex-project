@@ -9,6 +9,10 @@
 [ext_resource path="res://addons/qodot/game-definitions/fgd/solid_classes/detail_solid_class.tres" type="Resource" id=7]
 [ext_resource path="res://addons/qodot/game-definitions/fgd/solid_classes/illusionary_solid_class.tres" type="Resource" id=8]
 
+
+
+
+
 [resource]
 script = ExtResource( 6 )
 export_file = false

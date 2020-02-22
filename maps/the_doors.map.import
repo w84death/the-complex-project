@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/the_doors.map-1897c93f87df95b4e3b8ec74853932fb.tres"
+
+[deps]
+
+source_file="res://maps/the_doors.map"
+dest_files=[ "res://.import/the_doors.map-1897c93f87df95b4e3b8ec74853932fb.tres" ]
+
+[params]
+

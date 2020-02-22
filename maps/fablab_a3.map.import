@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/fablab_a3.map-6a6676464589b48646201413e0edf9f6.tres"
+
+[deps]
+
+source_file="res://maps/fablab_a3.map"
+dest_files=[ "res://.import/fablab_a3.map-6a6676464589b48646201413e0edf9f6.tres" ]
+
+[params]
+

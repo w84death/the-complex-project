@@ -5,4 +5,7 @@
 
 [node name="fab_a1" instance=ExtResource( 2 )]
 
+[node name="GUI" parent="." index="0"]
+self_modulate = Color( 1, 1, 1, 0 )
+
 [node name="fablab_a1" parent="." index="2" instance=ExtResource( 1 )]

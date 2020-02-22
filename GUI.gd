@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	pass
+	add_to_group("gui")
 
 func toggle_help():
 	if $info/help.visible: 

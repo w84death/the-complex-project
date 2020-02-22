@@ -6,3 +6,4 @@
 stream = ExtResource( 1 )
 unit_size = 10.5
 autoplay = true
+bus = "Environment"

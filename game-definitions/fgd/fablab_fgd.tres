@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=17 format=2]
+[gd_resource type="Resource" load_steps=19 format=2]
 
 [ext_resource path="res://addons/qodot/game-definitions/fgd/solid_classes/worldspawn_solid_class.tres" type="Resource" id=1]
 [ext_resource path="res://addons/qodot/game-definitions/fgd/point_classes/light_point_class.tres" type="Resource" id=2]
@@ -16,10 +16,12 @@
 [ext_resource path="res://game-definitions/fgd/point_classes/player_human_point_class.tres" type="Resource" id=14]
 [ext_resource path="res://game-definitions/fgd/point_classes/sound_computer_point_class.tres" type="Resource" id=15]
 [ext_resource path="res://game-definitions/fgd/point_classes/sound_machine_point_class.tres" type="Resource" id=16]
+[ext_resource path="res://game-definitions/fgd/point_classes/door_big_point_class.tres" type="Resource" id=17]
+[ext_resource path="res://game-definitions/fgd/solid_classes/trigger_nextlevel_solid_class.tres" type="Resource" id=18]
 
 [resource]
 script = ExtResource( 7 )
 export_file = false
 target_folder = "/home/kj/Nextcloud/Gamedev/godot/the-complex-project"
 fgd_name = "FabLab"
-entity_definitions = [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ]
+entity_definitions = [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 17 ) ]

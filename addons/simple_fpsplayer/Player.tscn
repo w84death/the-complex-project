@@ -52,3 +52,4 @@ cast_to = Vector3( 0, -2.2, 0 )
 [node name="audio_movement" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 5 )
 unit_size = 8.2
+bus = "Effects"
