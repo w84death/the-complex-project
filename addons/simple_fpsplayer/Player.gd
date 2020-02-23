@@ -89,7 +89,7 @@ func process_input(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			get_tree().change_scene("res://loading_menu.tscn")
+			Global.goto_scene("res://menu.tscn")
 	# ----------------------------------
 
 # ----------------------------------

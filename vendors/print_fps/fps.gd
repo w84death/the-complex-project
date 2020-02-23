@@ -5,7 +5,7 @@ var fps = 0
 func _ready():
 	set_process(true)
 
-func _process(delta):
+func _process(_delta):
 	var current_fps = Performance.get_monitor(Performance.TIME_FPS)
 	if current_fps > fps:
 		fps += 1

@@ -94,7 +94,7 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "door_closed"
+"method": "closed"
 } ]
 }
 
@@ -123,7 +123,7 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "door_opened"
+"method": "opened"
 } ]
 }
 

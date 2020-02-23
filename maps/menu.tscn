@@ -432,7 +432,7 @@ subdiv = 2
 extents = Vector3( 13.9574, 10.8102, 28.5009 )
 dynamic_range = 6
 energy = 1.4
-propagation = 0.85
+propagation = 1.0
 interior = true
 data = ExtResource( 19 )
 

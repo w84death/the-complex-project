@@ -7,6 +7,6 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		if $Client.is_connected_to_server():
 			$Client.disconnect_from_server()
-			self.get_tree().change_scene("res://loading_multiplayer.tscn")
+			Global.goto_scene("res://loading_multiplayer.tscn")
 		else:
-			get_tree().change_scene("res://loading_menu.tscn")
+			Global.goto_scene("res://menu.tscn")

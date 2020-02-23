@@ -23,7 +23,7 @@ func next_level():
 	con.add_child(lab)
 	add_child(con)
 	yield(get_tree().create_timer(.5), "timeout")
-	self.get_tree().change_scene("res://levels/"+level+".tscn")
+	var _err = self.get_tree().change_scene("res://levels/"+level+".tscn")
 	
 func check_trigger(body):
 	if body.is_in_group("player"):

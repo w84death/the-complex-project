@@ -153,10 +153,14 @@ _global_script_class_icons={
 [application]
 
 config/name="The Complex Project"
-run/main_scene="res://vendors/p1x/intro/intro.tscn"
+run/main_scene="res://main.tscn"
 boot_splash/image="res://textures/loading_p1x_final.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [display]
 
@@ -221,3 +225,4 @@ quality/subsurface_scattering/quality=2
 quality/voxel_cone_tracing/high_quality=true
 quality/filters/msaa=3
 environment/default_environment="res://materials/environment_dark.tres"
+quality/dynamic_fonts/use_oversampling=false

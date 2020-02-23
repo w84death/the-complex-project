@@ -1313,10 +1313,9 @@ subdiv = 3
 extents = Vector3( 232.912, 221.675, 214.977 )
 dynamic_range = 6
 interior = true
+energy = 1.4
+propagation = 1.0
 data = ExtResource( 20 )
-__meta__ = {
-"_editor_description_": ""
-}
 
 [node name="QodotMap" type="Spatial" parent="."]
 script = ExtResource( 1 )
