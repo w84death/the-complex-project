@@ -3,6 +3,7 @@ extends Node
 func _ready():
 	pass
 
+# warning-ignore:unused_argument
 func _input(event):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		self.quit_game()
@@ -11,6 +12,7 @@ func quit_game():
 	self.get_tree().quit()
 
 func _on_btn_join_pressed():
+# warning-ignore:return_value_discarded
 	self.get_tree().change_scene("res://multiplayer_client.tscn")
 
 func _on_btn_start_game_pressed():
@@ -32,20 +34,30 @@ func _on_btn_single_back_pressed():
 
 
 func _on_btn_startgame_pressed():
+# warning-ignore:return_value_discarded
 	self.get_tree().change_scene("res://singleplayer.tscn")
 
 
 func _on_btn_a1_pressed():
+# warning-ignore:return_value_discarded
 	self.get_tree().change_scene("res://levels/fab_a1.tscn")
 
 
 func _on_btn_a2_pressed():
-		self.get_tree().change_scene("res://levels/fab_a2.tscn")
+# warning-ignore:return_value_discarded
+	self.get_tree().change_scene("res://levels/fab_a2.tscn")
 
 
 func _on_btn_a0_pressed():
+# warning-ignore:return_value_discarded
 	self.get_tree().change_scene("res://levels/fab_a0.tscn")
 
 
 func _on_btn_a3_pressed():
+# warning-ignore:return_value_discarded
 	self.get_tree().change_scene("res://levels/fab_a3.tscn")
+
+
+func _on_btn_end_pressed():
+# warning-ignore:return_value_discarded
+	self.get_tree().change_scene("res://levels/end.tscn")

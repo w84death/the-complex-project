@@ -12,5 +12,5 @@ func _ready():
 
 
 func menu():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	self.get_tree().change_scene("res://menu.tscn")

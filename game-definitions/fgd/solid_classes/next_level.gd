@@ -18,7 +18,6 @@ func next_level():
 	lab.set_text("Loading...")
 	lab.set_align(HALIGN_CENTER)
 	lab.set_valign(VALIGN_CENTER)
-	#con.set_theme("res://materials/theme.tres")
 	con.set_anchors_and_margins_preset(15)
 	lab.set_anchors_and_margins_preset(8)
 	con.add_child(lab)

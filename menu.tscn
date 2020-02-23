@@ -316,9 +316,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -1280.0
+margin_left = -128.0
 margin_top = -128.0
-margin_right = -1024.0
+margin_right = 128.0
 margin_bottom = 172.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -398,9 +398,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -128.0
+margin_left = 1280.0
 margin_top = -128.0
-margin_right = 128.0
+margin_right = 1536.0
 margin_bottom = 172.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -497,16 +497,23 @@ margin_bottom = 164.0
 rect_min_size = Vector2( 0, 32 )
 text = "FAB LAB A3"
 
-[node name="Container" type="Container" parent="GUI/center/single/menu"]
+[node name="btn_end" type="Button" parent="GUI/center/single/menu"]
 margin_top = 176.0
 margin_right = 208.0
-margin_bottom = 200.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 0, 32 )
+text = "END"
+
+[node name="Container" type="Container" parent="GUI/center/single/menu"]
+margin_top = 220.0
+margin_right = 208.0
+margin_bottom = 244.0
 rect_min_size = Vector2( 0, 24 )
 
 [node name="btn_single_back" type="Button" parent="GUI/center/single/menu"]
-margin_top = 212.0
+margin_top = 256.0
 margin_right = 208.0
-margin_bottom = 244.0
+margin_bottom = 288.0
 rect_min_size = Vector2( 0, 32 )
 text = "BACK"
 __meta__ = {
@@ -527,7 +534,7 @@ __meta__ = {
 [node name="fps" parent="GUI" instance=ExtResource( 6 )]
 
 [node name="camera_3d_effects" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.615662, 0.274215, 0.73876, 0, 0.937501, -0.347983, -0.788011, -0.21424, -0.577183, 4.49826, 4.21832, -17.4974 )
+transform = Transform( 0.0211691, 0.184202, -0.98266, 0, 0.982881, 0.184243, 0.999776, -0.00390026, 0.0208067, 3.24432, 6.97341, -20.4959 )
 
 [node name="menu_anim" type="AnimationPlayer" parent="."]
 autoplay = "menu"
@@ -552,4 +559,5 @@ anims/demo = SubResource( 6 )
 [connection signal="pressed" from="GUI/center/single/menu/btn_a1" to="." method="_on_btn_a1_pressed"]
 [connection signal="pressed" from="GUI/center/single/menu/btn_a2" to="." method="_on_btn_a2_pressed"]
 [connection signal="pressed" from="GUI/center/single/menu/btn_a3" to="." method="_on_btn_a3_pressed"]
+[connection signal="pressed" from="GUI/center/single/menu/btn_end" to="." method="_on_btn_end_pressed"]
 [connection signal="pressed" from="GUI/center/single/menu/btn_single_back" to="." method="_on_btn_single_back_pressed"]
