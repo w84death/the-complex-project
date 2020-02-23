@@ -1,4 +1,4 @@
-[gd_scene load_steps=285 format=2]
+[gd_scene load_steps=286 format=2]
 
 [ext_resource path="res://materials/environment_dark.tres" type="Environment" id=1]
 [ext_resource path="res://addons/simple_fpsplayer/Player.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://textures/floor_metal2.material" type="Material" id=19]
 [ext_resource path="res://textures/concrete.material" type="Material" id=20]
 [ext_resource path="res://GI/fablab_a1.tres" type="GIProbeData" id=21]
+[ext_resource path="res://materials/material_animations.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -1283,13 +1284,13 @@ points = PoolVector3Array( -51.6042, 6.35417, -65.5625, -51.6042, 5.85417, -65.5
 [node name="fablab_a1" type="Spatial"]
 
 [node name="GIProbe" type="GIProbe" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.3085, -10.875, -63.3034 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -109.143, 0, -48.158 )
 subdiv = 3
-extents = Vector3( 153.043, 29.1955, 184.803 )
+extents = Vector3( 256, 64, 256 )
 dynamic_range = 6
-interior = true
 energy = 1.4
 propagation = 1.0
+interior = true
 data = ExtResource( 21 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -2395,3 +2396,5 @@ shape = SubResource( 262 )
 
 [node name="entity_24_brush_11_collision_shape" type="CollisionShape" parent="QodotMap/entity_24_wall/entity_24_physics_body"]
 shape = SubResource( 263 )
+
+[node name="material_animations" parent="." instance=ExtResource( 22 )]

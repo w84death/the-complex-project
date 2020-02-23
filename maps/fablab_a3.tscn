@@ -1,4 +1,4 @@
-[gd_scene load_steps=294 format=2]
+[gd_scene load_steps=295 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://addons/qodot/game-definitions/fgd/point_classes/light.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://textures/stripes.material" type="Material" id=18]
 [ext_resource path="res://textures/p1x_fab.wad" type="Resource" id=19]
 [ext_resource path="res://GI/fablab_a3.tres" type="GIProbeData" id=20]
+[ext_resource path="res://materials/material_animations.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -1310,11 +1311,11 @@ __meta__ = {
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6698, -34.9136, -24.4516 )
 subdiv = 3
-extents = Vector3( 232.912, 221.675, 214.977 )
+extents = Vector3( 256, 64, 256 )
 dynamic_range = 6
-interior = true
 energy = 1.4
 propagation = 1.0
+interior = true
 data = ExtResource( 20 )
 
 [node name="QodotMap" type="Spatial" parent="."]
@@ -2442,3 +2443,5 @@ shape = SubResource( 272 )
 
 [node name="entity_24_brush_56_collision_shape" type="CollisionShape" parent="QodotMap/entity_24_wall/entity_24_physics_body"]
 shape = SubResource( 273 )
+
+[node name="material_animations" parent="." instance=ExtResource( 21 )]

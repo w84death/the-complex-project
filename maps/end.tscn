@@ -335,9 +335,8 @@ tracks/9/keys = {
 script = ExtResource( 13 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6698, -34.9136, -24.4516 )
 subdiv = 3
-extents = Vector3( 232.912, 221.675, 214.977 )
+extents = Vector3( 256, 256, 256 )
 dynamic_range = 6
 data = ExtResource( 1 )
 __meta__ = {

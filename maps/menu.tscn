@@ -427,9 +427,8 @@ points = PoolVector3Array( 3.25, 9, -35, 3.25, 5, -35, 3.5, 5, -35, 3.5, 9, -35,
 environment = ExtResource( 6 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08145, 7.11118, -24.6522 )
 subdiv = 2
-extents = Vector3( 13.9574, 10.8102, 28.5009 )
+extents = Vector3( 64, 32, 64 )
 dynamic_range = 6
 energy = 1.4
 propagation = 1.0

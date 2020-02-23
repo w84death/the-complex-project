@@ -1829,9 +1829,9 @@ tracks/14/keys = {
 [node name="fablab_a0" type="Spatial"]
 
 [node name="GIProbe" type="GIProbe" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.422, 104.23, -17.5073 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.422, 58.9368, -35.1764 )
 subdiv = 3
-extents = Vector3( 284.321, 225.037, 278.818 )
+extents = Vector3( 256, 256, 256 )
 dynamic_range = 6
 data = ExtResource( 31 )
 
