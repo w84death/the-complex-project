@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/truck_module_2.map-535ccd2a2bb1c58be886929e0d65ab71.tres"
+
+[deps]
+
+source_file="res://maps/truck_module_2.map"
+dest_files=[ "res://.import/truck_module_2.map-535ccd2a2bb1c58be886929e0d65ab71.tres" ]
+
+[params]
+

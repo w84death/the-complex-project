@@ -560,7 +560,7 @@ shape = SubResource( 55 )
 shape = SubResource( 56 )
 
 [node name="camera_3d_effects" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.038474, -0.529838, -0.847226, 0.00888058, 0.848002, -0.529919, 0.99922, 0.0128642, 0.0373313, -46, 15.47, 13.187 )
+transform = Transform( 0.0408285, -0.305013, -0.951472, 0.00997328, 0.952344, -0.304864, 0.999116, 0.00295786, 0.0419248, -93.5, 15.47, 13.187 )
 
 [node name="heli" parent="." instance=ExtResource( 11 )]
 transform = Transform( -0.603013, 0, -0.797731, 0, 1, 0, 0.797731, 0, -0.603013, 19.7665, 87.609, 83.3272 )
@@ -581,7 +581,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 
 [node name="credits" type="Label" parent="GUI/center"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -701,6 +700,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="GUI"]
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=286 format=2]
+[gd_scene load_steps=291 format=2]
 
 [ext_resource path="res://materials/environment_dark.tres" type="Environment" id=1]
 [ext_resource path="res://addons/simple_fpsplayer/Player.tscn" type="PackedScene" id=2]
@@ -22,11 +22,15 @@
 [ext_resource path="res://textures/concrete.material" type="Material" id=20]
 [ext_resource path="res://GI/fablab_a1.tres" type="GIProbeData" id=21]
 [ext_resource path="res://materials/material_animations.tscn" type="PackedScene" id=22]
+[ext_resource path="res://maps/space_truck.tscn" type="PackedScene" id=23]
+[ext_resource path="res://addons/simple_fpsplayer/PlayerAI.tscn" type="PackedScene" id=24]
+[ext_resource path="res://maps/space_truck_module_1.tscn" type="PackedScene" id=25]
+[ext_resource path="res://maps/space_truck_module_2.tscn" type="PackedScene" id=26]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
-"aabb": AABB( -30.625, -6.125, -89.375, 64, 24, 119.5 ),
-"array_data": PoolByteArray( 0, 0, 245, 193, 0, 0, 143, 65, 0, 192, 178, 194, 0, 0, 129, 0, 127, 0, 0, 129, 64, 210, 0, 0, 0, 0, 245, 193, 0, 0, 196, 192, 0, 192, 178, 194, 0, 0, 129, 0, 127, 0, 0, 129, 64, 210, 0, 70, 0, 0, 241, 193, 0, 0, 196, 192, 0, 192, 178, 194, 0, 0, 129, 0, 127, 0, 0, 129, 60, 210, 0, 70, 0, 0, 241, 193, 0, 0, 143, 65, 0, 192, 178, 194, 0, 0, 129, 0, 127, 0, 0, 129, 60, 210, 0, 0, 0, 0, 245, 193, 0, 0, 143, 65, 0, 192, 178, 194, 129, 0, 0, 0, 0, 0, 127, 127, 84, 210, 0, 0, 0, 0, 245, 193, 0, 0, 143, 65, 0, 0, 237, 65, 129, 0, 0, 0, 0, 0, 127, 127, 56, 205, 0, 0, 0, 0, 245, 193, 0, 0, 196, 192, 0, 0, 237, 65, 129, 0, 0, 0, 0, 0, 127, 127, 56, 205, 0, 70, 0, 0, 245, 193, 0, 0, 196, 192, 0, 192, 178, 194, 129, 0, 0, 0, 0, 0, 127, 127, 84, 210, 0, 70, 0, 0, 241, 193, 0, 0, 196, 192, 0, 192, 178, 194, 0, 129, 0, 0, 0, 0, 127, 129, 84, 210, 60, 82, 0, 0, 245, 193, 0, 0, 196, 192, 0, 192, 178, 194, 0, 129, 0, 0, 0, 0, 127, 129, 84, 210, 64, 82, 0, 0, 245, 193, 0, 0, 196, 192, 0, 0, 237, 65, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 64, 82, 0, 0, 241, 193, 0, 0, 196, 192, 0, 0, 237, 65, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 60, 82, 0, 0, 241, 193, 0, 0, 143, 65, 0, 192, 178, 194, 0, 127, 0, 0, 0, 0, 127, 127, 84, 210, 60, 82, 0, 0, 241, 193, 0, 0, 143, 65, 0, 0, 237, 65, 0, 127, 0, 0, 0, 0, 127, 127, 56, 205, 60, 82, 0, 0, 245, 193, 0, 0, 143, 65, 0, 0, 237, 65, 0, 127, 0, 0, 0, 0, 127, 127, 56, 205, 64, 82, 0, 0, 245, 193, 0, 0, 143, 65, 0, 192, 178, 194, 0, 127, 0, 0, 0, 0, 127, 127, 84, 210, 64, 82, 0, 0, 241, 193, 0, 0, 143, 65, 0, 192, 178, 194, 127, 0, 0, 0, 0, 0, 127, 129, 84, 210, 0, 0, 0, 0, 241, 193, 0, 0, 196, 192, 0, 192, 178, 194, 127, 0, 0, 0, 0, 0, 127, 129, 84, 210, 0, 70, 0, 0, 241, 193, 0, 0, 196, 192, 0, 0, 237, 65, 127, 0, 0, 0, 0, 0, 127, 129, 56, 205, 0, 70, 0, 0, 241, 193, 0, 0, 143, 65, 0, 0, 237, 65, 127, 0, 0, 0, 0, 0, 127, 129, 56, 205, 0, 0, 0, 0, 245, 193, 0, 0, 143, 65, 0, 0, 237, 65, 0, 0, 127, 0, 127, 0, 0, 127, 64, 210, 0, 0, 0, 0, 241, 193, 0, 0, 143, 65, 0, 0, 237, 65, 0, 0, 127, 0, 127, 0, 0, 127, 60, 210, 0, 0, 0, 0, 241, 193, 0, 0, 196, 192, 0, 0, 237, 65, 0, 0, 127, 0, 127, 0, 0, 127, 60, 210, 0, 70, 0, 0, 245, 193, 0, 0, 196, 192, 0, 0, 237, 65, 0, 0, 127, 0, 127, 0, 0, 127, 64, 210, 0, 70, 0, 0, 219, 65, 0, 0, 180, 192, 0, 0, 237, 65, 0, 0, 129, 0, 127, 0, 0, 129, 112, 208, 224, 69, 0, 0, 219, 65, 0, 0, 196, 192, 0, 0, 237, 65, 0, 0, 129, 0, 127, 0, 0, 129, 112, 208, 0, 70, 0, 128, 5, 66, 0, 0, 196, 192, 0, 0, 237, 65, 0, 0, 129, 0, 127, 0, 0, 129, 64, 208, 0, 70, 0, 128, 5, 66, 0, 0, 180, 192, 0, 0, 237, 65, 0, 0, 129, 0, 127, 0, 0, 129, 64, 208, 224, 69, 0, 0, 219, 65, 0, 0, 180, 192, 0, 0, 237, 65, 129, 0, 0, 0, 0, 0, 127, 127, 72, 205, 224, 69, 0, 0, 219, 65, 0, 0, 180, 192, 0, 0, 241, 65, 129, 0, 0, 0, 0, 0, 127, 127, 64, 205, 224, 69, 0, 0, 219, 65, 0, 0, 196, 192, 0, 0, 241, 65, 129, 0, 0, 0, 0, 0, 127, 127, 64, 205, 0, 70, 0, 0, 219, 65, 0, 0, 196, 192, 0, 0, 237, 65, 129, 0, 0, 0, 0, 0, 127, 127, 72, 205, 0, 70, 0, 128, 5, 66, 0, 0, 196, 192, 0, 0, 237, 65, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 64, 80, 0, 0, 219, 65, 0, 0, 196, 192, 0, 0, 237, 65, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 112, 80, 0, 0, 219, 65, 0, 0, 196, 192, 0, 0, 241, 65, 0, 129, 0, 0, 0, 0, 127, 129, 48, 205, 112, 80, 0, 128, 5, 66, 0, 0, 196, 192, 0, 0, 241, 65, 0, 129, 0, 0, 0, 0, 127, 129, 48, 205, 64, 80, 0, 128, 5, 66, 0, 0, 180, 192, 0, 0, 237, 65, 0, 127, 0, 0, 0, 0, 127, 127, 72, 205, 64, 80, 0, 128, 5, 66, 0, 0, 180, 192, 0, 0, 241, 65, 0, 127, 0, 0, 0, 0, 127, 127, 64, 205, 64, 80, 0, 0, 219, 65, 0, 0, 180, 192, 0, 0, 241, 65, 0, 127, 0, 0, 0, 0, 127, 127, 64, 205, 112, 80, 0, 0, 219, 65, 0, 0, 180, 192, 0, 0, 237, 65, 0, 127, 0, 0, 0, 0, 127, 127, 72, 205, 112, 80, 0, 128, 5, 66, 0, 0, 180, 192, 0, 0, 237, 65, 127, 0, 0, 0, 0, 0, 127, 129, 72, 205, 224, 69, 0, 128, 5, 66, 0, 0, 196, 192, 0, 0, 237, 65, 127, 0, 0, 0, 0, 0, 127, 129, 72, 205, 0, 70, 0, 128, 5, 66, 0, 0, 196, 192, 0, 0, 241, 65, 127, 0, 0, 0, 0, 0, 127, 129, 64, 205, 0, 70, 0, 128, 5, 66, 0, 0, 180, 192, 0, 0, 241, 65, 127, 0, 0, 0, 0, 0, 127, 129, 64, 205, 224, 69, 0, 0, 219, 65, 0, 0, 180, 192, 0, 0, 241, 65, 0, 0, 127, 0, 127, 0, 0, 127, 112, 208, 224, 69, 0, 128, 5, 66, 0, 0, 180, 192, 0, 0, 241, 65, 0, 0, 127, 0, 127, 0, 0, 127, 64, 208, 224, 69, 0, 128, 5, 66, 0, 0, 196, 192, 0, 0, 241, 65, 0, 0, 127, 0, 127, 0, 0, 127, 64, 208, 0, 70, 0, 0, 219, 65, 0, 0, 196, 192, 0, 0, 241, 65, 0, 0, 127, 0, 127, 0, 0, 127, 112, 208, 0, 70 ),
+"aabb": AABB( -200, -24, -203.5, 64, 24, 119.5 ),
+"array_data": PoolByteArray( 0, 0, 14, 195, 0, 0, 188, 193, 0, 0, 169, 194, 0, 0, 129, 0, 127, 0, 0, 129, 112, 208, 224, 69, 0, 0, 14, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 0, 129, 0, 127, 0, 0, 129, 112, 208, 0, 70, 0, 0, 8, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 0, 129, 0, 127, 0, 0, 129, 64, 208, 0, 70, 0, 0, 8, 195, 0, 0, 188, 193, 0, 0, 169, 194, 0, 0, 129, 0, 127, 0, 0, 129, 64, 208, 224, 69, 0, 0, 14, 195, 0, 0, 188, 193, 0, 0, 169, 194, 129, 0, 0, 0, 0, 0, 127, 127, 72, 205, 224, 69, 0, 0, 14, 195, 0, 0, 188, 193, 0, 0, 168, 194, 129, 0, 0, 0, 0, 0, 127, 127, 64, 205, 224, 69, 0, 0, 14, 195, 0, 0, 192, 193, 0, 0, 168, 194, 129, 0, 0, 0, 0, 0, 127, 127, 64, 205, 0, 70, 0, 0, 14, 195, 0, 0, 192, 193, 0, 0, 169, 194, 129, 0, 0, 0, 0, 0, 127, 127, 72, 205, 0, 70, 0, 0, 8, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 64, 80, 0, 0, 14, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 112, 80, 0, 0, 14, 195, 0, 0, 192, 193, 0, 0, 168, 194, 0, 129, 0, 0, 0, 0, 127, 129, 48, 205, 112, 80, 0, 0, 8, 195, 0, 0, 192, 193, 0, 0, 168, 194, 0, 129, 0, 0, 0, 0, 127, 129, 48, 205, 64, 80, 0, 0, 8, 195, 0, 0, 188, 193, 0, 0, 169, 194, 0, 127, 0, 0, 0, 0, 127, 127, 72, 205, 64, 80, 0, 0, 8, 195, 0, 0, 188, 193, 0, 0, 168, 194, 0, 127, 0, 0, 0, 0, 127, 127, 64, 205, 64, 80, 0, 0, 14, 195, 0, 0, 188, 193, 0, 0, 168, 194, 0, 127, 0, 0, 0, 0, 127, 127, 64, 205, 112, 80, 0, 0, 14, 195, 0, 0, 188, 193, 0, 0, 169, 194, 0, 127, 0, 0, 0, 0, 127, 127, 72, 205, 112, 80, 0, 0, 8, 195, 0, 0, 188, 193, 0, 0, 169, 194, 127, 0, 0, 0, 0, 0, 127, 129, 72, 205, 224, 69, 0, 0, 8, 195, 0, 0, 192, 193, 0, 0, 169, 194, 127, 0, 0, 0, 0, 0, 127, 129, 72, 205, 0, 70, 0, 0, 8, 195, 0, 0, 192, 193, 0, 0, 168, 194, 127, 0, 0, 0, 0, 0, 127, 129, 64, 205, 0, 70, 0, 0, 8, 195, 0, 0, 188, 193, 0, 0, 168, 194, 127, 0, 0, 0, 0, 0, 127, 129, 64, 205, 224, 69, 0, 0, 14, 195, 0, 0, 188, 193, 0, 0, 168, 194, 0, 0, 127, 0, 127, 0, 0, 127, 112, 208, 224, 69, 0, 0, 8, 195, 0, 0, 188, 193, 0, 0, 168, 194, 0, 0, 127, 0, 127, 0, 0, 127, 64, 208, 224, 69, 0, 0, 8, 195, 0, 0, 192, 193, 0, 0, 168, 194, 0, 0, 127, 0, 127, 0, 0, 127, 64, 208, 0, 70, 0, 0, 14, 195, 0, 0, 192, 193, 0, 0, 168, 194, 0, 0, 127, 0, 127, 0, 0, 127, 112, 208, 0, 70, 0, 0, 72, 195, 0, 0, 0, 0, 0, 128, 75, 195, 0, 0, 129, 0, 127, 0, 0, 129, 64, 210, 0, 0, 0, 0, 72, 195, 0, 0, 192, 193, 0, 128, 75, 195, 0, 0, 129, 0, 127, 0, 0, 129, 64, 210, 0, 70, 0, 128, 71, 195, 0, 0, 192, 193, 0, 128, 75, 195, 0, 0, 129, 0, 127, 0, 0, 129, 60, 210, 0, 70, 0, 128, 71, 195, 0, 0, 0, 0, 0, 128, 75, 195, 0, 0, 129, 0, 127, 0, 0, 129, 60, 210, 0, 0, 0, 0, 72, 195, 0, 0, 0, 0, 0, 128, 75, 195, 129, 0, 0, 0, 0, 0, 127, 127, 84, 210, 0, 0, 0, 0, 72, 195, 0, 0, 0, 0, 0, 0, 169, 194, 129, 0, 0, 0, 0, 0, 127, 127, 56, 205, 0, 0, 0, 0, 72, 195, 0, 0, 192, 193, 0, 0, 169, 194, 129, 0, 0, 0, 0, 0, 127, 127, 56, 205, 0, 70, 0, 0, 72, 195, 0, 0, 192, 193, 0, 128, 75, 195, 129, 0, 0, 0, 0, 0, 127, 127, 84, 210, 0, 70, 0, 128, 71, 195, 0, 0, 192, 193, 0, 128, 75, 195, 0, 129, 0, 0, 0, 0, 127, 129, 84, 210, 60, 82, 0, 0, 72, 195, 0, 0, 192, 193, 0, 128, 75, 195, 0, 129, 0, 0, 0, 0, 127, 129, 84, 210, 64, 82, 0, 0, 72, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 64, 82, 0, 128, 71, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 129, 0, 0, 0, 0, 127, 129, 56, 205, 60, 82, 0, 128, 71, 195, 0, 0, 0, 0, 0, 128, 75, 195, 0, 127, 0, 0, 0, 0, 127, 127, 84, 210, 60, 82, 0, 128, 71, 195, 0, 0, 0, 0, 0, 0, 169, 194, 0, 127, 0, 0, 0, 0, 127, 127, 56, 205, 60, 82, 0, 0, 72, 195, 0, 0, 0, 0, 0, 0, 169, 194, 0, 127, 0, 0, 0, 0, 127, 127, 56, 205, 64, 82, 0, 0, 72, 195, 0, 0, 0, 0, 0, 128, 75, 195, 0, 127, 0, 0, 0, 0, 127, 127, 84, 210, 64, 82, 0, 128, 71, 195, 0, 0, 0, 0, 0, 128, 75, 195, 127, 0, 0, 0, 0, 0, 127, 129, 84, 210, 0, 0, 0, 128, 71, 195, 0, 0, 192, 193, 0, 128, 75, 195, 127, 0, 0, 0, 0, 0, 127, 129, 84, 210, 0, 70, 0, 128, 71, 195, 0, 0, 192, 193, 0, 0, 169, 194, 127, 0, 0, 0, 0, 0, 127, 129, 56, 205, 0, 70, 0, 128, 71, 195, 0, 0, 0, 0, 0, 0, 169, 194, 127, 0, 0, 0, 0, 0, 127, 129, 56, 205, 0, 0, 0, 0, 72, 195, 0, 0, 0, 0, 0, 0, 169, 194, 0, 0, 127, 0, 127, 0, 0, 127, 64, 210, 0, 0, 0, 128, 71, 195, 0, 0, 0, 0, 0, 0, 169, 194, 0, 0, 127, 0, 127, 0, 0, 127, 60, 210, 0, 0, 0, 128, 71, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 0, 127, 0, 127, 0, 0, 127, 60, 210, 0, 70, 0, 0, 72, 195, 0, 0, 192, 193, 0, 0, 169, 194, 0, 0, 127, 0, 127, 0, 0, 127, 64, 210, 0, 70 ),
 "array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 24, 0, 26, 0, 27, 0, 28, 0, 29, 0, 30, 0, 28, 0, 30, 0, 31, 0, 32, 0, 33, 0, 34, 0, 32, 0, 34, 0, 35, 0, 36, 0, 37, 0, 38, 0, 36, 0, 38, 0, 39, 0, 40, 0, 41, 0, 42, 0, 40, 0, 42, 0, 43, 0, 44, 0, 45, 0, 46, 0, 44, 0, 46, 0, 47, 0 ),
 "blend_shape_data": [  ],
 "format": 97559,
@@ -38,10 +42,10 @@ surfaces/0 = {
 }
 
 [sub_resource type="ConvexPolygonShape" id=2]
-points = PoolVector3Array( -30.625, 17.875, -89.375, -30.625, -6.125, -89.375, -30.125, -6.125, -89.375, -30.125, 17.875, -89.375, -30.625, 17.875, 29.625, -30.625, -6.125, 29.625, -30.125, -6.125, 29.625, -30.125, 17.875, 29.625 )
+points = PoolVector3Array( -142, -23.5, -84.5, -142, -24, -84.5, -136, -24, -84.5, -136, -23.5, -84.5, -142, -23.5, -84, -142, -24, -84, -136, -24, -84, -136, -23.5, -84 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
-points = PoolVector3Array( 27.375, -5.625, 29.625, 27.375, -6.125, 29.625, 33.375, -6.125, 29.625, 33.375, -5.625, 29.625, 27.375, -5.625, 30.125, 27.375, -6.125, 30.125, 33.375, -6.125, 30.125, 33.375, -5.625, 30.125 )
+points = PoolVector3Array( -200, 0, -203.5, -200, -24, -203.5, -199.5, -24, -203.5, -199.5, 0, -203.5, -200, 0, -84.5, -200, -24, -84.5, -199.5, -24, -84.5, -199.5, 0, -84.5 )
 
 [sub_resource type="ArrayMesh" id=4]
 surfaces/0 = {
@@ -1281,6 +1285,35 @@ points = PoolVector3Array( -29.6042, 6.35417, -65.5625, -29.6042, 5.85417, -65.5
 [sub_resource type="ConvexPolygonShape" id=263]
 points = PoolVector3Array( -51.6042, 6.35417, -65.5625, -51.6042, 5.85417, -65.5625, -44.6042, 5.85417, -65.5625, -44.6042, 6.35417, -65.5625, -51.6042, 6.35417, 45.9375, -51.6042, 5.85417, 45.9375, -44.6042, 5.85417, 45.9375, -44.6042, 6.35417, 45.9375 )
 
+[sub_resource type="Animation" id=264]
+resource_name = "truck_demo"
+length = 11.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("space_truck_module_1:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 7, 9, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -134.931, -22.0609, -132.4 ), Vector3( -134.931, -22.0609, -98.3998 ), Vector3( -134.931, -22.0609, -98.3998 ), Vector3( -134.931, -22.0609, -132.4 ), Vector3( -134.931, -22.0609, -132.4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("space_truck_module_2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4, 6, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -134.931, -22.0609, -166.4 ), Vector3( -134.931, -22.0609, -132.4 ), Vector3( -134.931, -22.0609, -132.4 ), Vector3( -134.931, -22.0609, -166.4 ), Vector3( -134.931, -22.0609, -166.4 ) ]
+}
+
 [node name="fablab_a1" type="Spatial"]
 
 [node name="GIProbe" type="GIProbe" parent="."]
@@ -1316,34 +1349,33 @@ properties = {
 "wad": "../textures/p1x_fab.wad"
 }
 
+[node name="entity_0_physics_body" type="StaticBody" parent="QodotMap/entity_0_worldspawn"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance" parent="QodotMap/entity_0_worldspawn/entity_0_physics_body"]
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn/entity_0_physics_body"]
+shape = SubResource( 2 )
+
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn/entity_0_physics_body"]
+shape = SubResource( 3 )
+
 [node name="entity_1_func_group" type="Spatial" parent="QodotMap"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -169.375, -17.875, -114.125 )
 script = ExtResource( 6 )
 properties = {
-"_tb_id": "370",
+"_tb_id": "64",
 "_tb_name": "a1",
 "_tb_type": "_tb_group",
 "classname": "func_group"
 }
 
-[node name="entity_1_physics_body" type="StaticBody" parent="QodotMap/entity_1_func_group"]
-
-[node name="entity_1_mesh_instance" type="MeshInstance" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
-use_in_baked_light = true
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="entity_1_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
-shape = SubResource( 2 )
-
-[node name="entity_1_brush_1_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
-shape = SubResource( 3 )
-
 [node name="entity_2_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "371",
+"_tb_group": "64",
+"_tb_id": "65",
 "_tb_name": "tunnelsingle",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -1353,7 +1385,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38, -19.2407, -10 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "371",
+"_tb_group": "65",
 "classname": "wall"
 }
 
@@ -1425,8 +1457,8 @@ shape = SubResource( 22 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -10.8056, -10 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "372",
+"_tb_group": "64",
+"_tb_id": "66",
 "_tb_name": "lift",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -1471,7 +1503,7 @@ shape = SubResource( 32 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12326, -17.7552, -10.0208 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "372",
+"_tb_group": "66",
 "classname": "wall"
 }
 
@@ -1636,7 +1668,7 @@ shape = SubResource( 81 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -9, -10 )
 script = ExtResource( 3 )
 properties = {
-"_tb_group": "372",
+"_tb_group": "66",
 "angle": "",
 "classname": "light",
 "light": "500",
@@ -1649,8 +1681,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -23.5, -11 )
 [node name="entity_8_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "373",
+"_tb_group": "64",
+"_tb_id": "67",
 "_tb_name": "fan",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -1660,7 +1692,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -10.75, -10 )
 script = ExtResource( 7 )
 properties = {
-"_tb_group": "373",
+"_tb_group": "67",
 "classname": "rotate"
 }
 
@@ -1690,8 +1722,8 @@ shape = SubResource( 87 )
 [node name="entity_10_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "374",
+"_tb_group": "64",
+"_tb_id": "68",
 "_tb_name": "tunnel",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -1701,7 +1733,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.39, -19.0388, -10 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "374",
+"_tb_group": "68",
 "classname": "wall"
 }
 
@@ -1895,8 +1927,8 @@ shape = SubResource( 147 )
 [node name="entity_12_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "375",
+"_tb_group": "64",
+"_tb_id": "69",
 "_tb_name": "exit",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -1906,7 +1938,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -139, -18.5, 73 )
 script = ExtResource( 4 )
 properties = {
-"_tb_group": "375",
+"_tb_group": "69",
 "classname": "trigger_nextlevel",
 "level": "fab_a2"
 }
@@ -1919,8 +1951,8 @@ shape = SubResource( 148 )
 [node name="entity_14_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "375",
-"_tb_id": "376",
+"_tb_group": "69",
+"_tb_id": "70",
 "_tb_name": "fan",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -1930,7 +1962,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -139, -10.75, 73 )
 script = ExtResource( 7 )
 properties = {
-"_tb_group": "376",
+"_tb_group": "70",
 "classname": "rotate"
 }
 
@@ -1960,8 +1992,8 @@ shape = SubResource( 154 )
 [node name="entity_16_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "375",
-"_tb_id": "377",
+"_tb_group": "69",
+"_tb_id": "71",
 "_tb_name": "lift",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -1971,7 +2003,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -139, -9, 73 )
 script = ExtResource( 3 )
 properties = {
-"_tb_group": "377",
+"_tb_group": "71",
 "angle": "270",
 "classname": "light",
 "light": "500",
@@ -1982,7 +2014,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -138.982, -16.6579, 69.5278 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "377",
+"_tb_group": "71",
 "classname": "wall"
 }
 
@@ -2174,8 +2206,8 @@ shape = SubResource( 212 )
 [node name="entity_19_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "378",
+"_tb_group": "64",
+"_tb_id": "72",
 "_tb_name": "tunnelsingle",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -2185,7 +2217,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -139, -19.2407, 34 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "378",
+"_tb_group": "72",
 "classname": "wall"
 }
 
@@ -2256,8 +2288,8 @@ shape = SubResource( 231 )
 [node name="entity_21_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "379",
+"_tb_group": "64",
+"_tb_id": "73",
 "_tb_name": "tunnelsingle",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -2267,7 +2299,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -139, -19.2407, -54 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "379",
+"_tb_group": "73",
 "classname": "wall"
 }
 
@@ -2338,8 +2370,7 @@ shape = SubResource( 250 )
 [node name="entity_23_func_group" type="Spatial" parent="QodotMap"]
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "370",
-"_tb_id": "380",
+"_tb_id": "74",
 "_tb_name": "room",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -2349,7 +2380,7 @@ properties = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -133.896, -6.85417, -133.938 )
 script = ExtResource( 6 )
 properties = {
-"_tb_group": "380",
+"_tb_group": "74",
 "classname": "wall"
 }
 
@@ -2397,4 +2428,32 @@ shape = SubResource( 262 )
 [node name="entity_24_brush_11_collision_shape" type="CollisionShape" parent="QodotMap/entity_24_wall/entity_24_physics_body"]
 shape = SubResource( 263 )
 
+[node name="entity_25_player_ai" parent="QodotMap" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.5, -23, -130 )
+
+[node name="entity_26_player_ai" parent="QodotMap" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.5, -23, -151 )
+
+[node name="entity_27_player_ai" parent="QodotMap" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -94.5, -23, -148 )
+
+[node name="entity_28_player_ai" parent="QodotMap" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -104.5, -23, -163 )
+
+[node name="entity_29_player_ai" parent="QodotMap" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -123.5, -23, -187 )
+
 [node name="material_animations" parent="." instance=ExtResource( 22 )]
+
+[node name="space_truck" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -138.438, -23.5496, -132.436 )
+
+[node name="space_truck_module_1" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -134.931, -22.0609, -132.4 )
+
+[node name="space_truck_module_2" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -134.931, -22.0609, -166.4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "truck_demo"
+anims/truck_demo = SubResource( 264 )

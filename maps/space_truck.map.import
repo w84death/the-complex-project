@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/space_truck.map-4c24a4e73075e6f4a107e49d43caa4a0.tres"
+
+[deps]
+
+source_file="res://maps/space_truck.map"
+dest_files=[ "res://.import/space_truck.map-4c24a4e73075e6f4a107e49d43caa4a0.tres" ]
+
+[params]
+

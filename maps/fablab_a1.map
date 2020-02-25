@@ -29,20 +29,20 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "a1"
-"_tb_id" "424"
+"_tb_id" "64"
 }
 // entity 2
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "tunnel single"
-"_tb_id" "425"
-"_tb_group" "424"
+"_tb_id" "65"
+"_tb_group" "64"
 }
 // entity 3
 {
 "classname" "wall"
-"_tb_group" "425"
+"_tb_group" "65"
 // brush 0
 {
 ( -104 -760 -312 ) ( -104 -759 -312 ) ( -104 -760 -311 ) panel_white -8 -0 -0 1 1
@@ -209,8 +209,8 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "lift"
-"_tb_id" "426"
-"_tb_group" "424"
+"_tb_id" "66"
+"_tb_group" "64"
 // brush 0
 {
 ( -216 -40 -136 ) ( -216 72 -136 ) ( -216 -40 -128 ) light_white 16 -0 -0 1 1
@@ -292,7 +292,7 @@
 // entity 5
 {
 "classname" "wall"
-"_tb_group" "426"
+"_tb_group" "66"
 // brush 0
 {
 ( -208 -120 -240 ) ( -208 -120 -241 ) ( -208 -119 -240 ) metal_painted -0 -0 -0 1 -1
@@ -724,27 +724,27 @@
 "origin" "-160 16 -144"
 "angle" ""
 "light" "500"
-"_tb_group" "426"
+"_tb_group" "66"
 }
 // entity 7
 {
 "classname" "player_human"
 "origin" "-176 -48 -376"
 "angle" "180"
-"_tb_group" "424"
+"_tb_group" "64"
 }
 // entity 8
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "fan"
-"_tb_id" "427"
-"_tb_group" "424"
+"_tb_id" "67"
+"_tb_group" "64"
 }
 // entity 9
 {
 "classname" "rotate"
-"_tb_group" "427"
+"_tb_group" "67"
 // brush 0
 {
 ( -152 8 -176 ) ( -152 24 -176 ) ( -152 24 -48 ) metal_painted -16 -24 180 1 -1
@@ -796,13 +796,13 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "tunnel"
-"_tb_id" "428"
-"_tb_group" "424"
+"_tb_id" "68"
+"_tb_group" "64"
 }
 // entity 11
 {
 "classname" "wall"
-"_tb_group" "428"
+"_tb_group" "68"
 // brush 0
 {
 ( -240 -1944 -304 ) ( -240 -1944 -303 ) ( -240 -1945 -304 ) panel_white -24 -0 180 1 -1
@@ -1331,14 +1331,14 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "exit"
-"_tb_id" "429"
-"_tb_group" "424"
+"_tb_id" "69"
+"_tb_group" "64"
 }
 // entity 13
 {
 "classname" "trigger_nextlevel"
 "level" "fab_a2"
-"_tb_group" "429"
+"_tb_group" "69"
 // brush 0
 {
 ( 1088 -2128 -336 ) ( 1088 -2127 -336 ) ( 1088 -2128 -335 ) concrete -0 32 -0 1 1
@@ -1354,13 +1354,13 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "fan"
-"_tb_id" "430"
-"_tb_group" "429"
+"_tb_id" "70"
+"_tb_group" "69"
 }
 // entity 15
 {
 "classname" "rotate"
-"_tb_group" "430"
+"_tb_group" "70"
 // brush 0
 {
 ( 1160 -2280 -160 ) ( 1160 -2280 -159 ) ( 1160 -2281 -160 ) metal_painted -16 -24 180 1 -1
@@ -1412,8 +1412,8 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "lift"
-"_tb_id" "431"
-"_tb_group" "429"
+"_tb_id" "71"
+"_tb_group" "69"
 }
 // entity 17
 {
@@ -1421,12 +1421,12 @@
 "origin" "1168 -2224 -144"
 "angle" "270"
 "light" "500"
-"_tb_group" "431"
+"_tb_group" "71"
 }
 // entity 18
 {
 "classname" "wall"
-"_tb_group" "431"
+"_tb_group" "71"
 // brush 0
 {
 ( 1112 -2280 -136 ) ( 1112 -2168 -136 ) ( 1112 -2280 -128 ) light_white -16 -0 180 1 -1
@@ -1934,13 +1934,13 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "tunnel single"
-"_tb_id" "432"
-"_tb_group" "424"
+"_tb_id" "72"
+"_tb_group" "64"
 }
 // entity 20
 {
 "classname" "wall"
-"_tb_group" "432"
+"_tb_group" "72"
 // brush 0
 {
 ( 64 -2256 -312 ) ( 64 -2256 -311 ) ( 64 -2257 -312 ) panel_white -16 -0 180 1 -1
@@ -2107,13 +2107,13 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "tunnel single"
-"_tb_id" "433"
-"_tb_group" "424"
+"_tb_id" "73"
+"_tb_group" "64"
 }
 // entity 22
 {
 "classname" "wall"
-"_tb_group" "433"
+"_tb_group" "73"
 // brush 0
 {
 ( -1344 -2256 -312 ) ( -1344 -2256 -311 ) ( -1344 -2257 -312 ) panel_white -16 -0 180 1 -1
@@ -2280,12 +2280,12 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "room"
-"_tb_id" "434"
+"_tb_id" "74"
 }
 // entity 24
 {
 "classname" "wall"
-"_tb_group" "434"
+"_tb_group" "74"
 // brush 0
 {
 ( -3256 -1288 -376 ) ( -3256 -3192 -376 ) ( -3256 -1288 -384 ) concrete 0 0 0 1 1
@@ -2394,4 +2394,29 @@
 ( -2016 -2856 -8 ) ( -2015 -2856 -8 ) ( -2016 -2856 -7 ) light_white -0 -8 -0 1 1
 ( -1408 -2856 -8 ) ( -1408 -2856 -7 ) ( -1408 -2855 -8 ) light_white -0 -8 -0 1 1
 }
+}
+// entity 25
+{
+"classname" "player_ai"
+"origin" "-2080 -1416 -368"
+}
+// entity 26
+{
+"classname" "player_ai"
+"origin" "-2416 -1416 -368"
+}
+// entity 27
+{
+"classname" "player_ai"
+"origin" "-2368 -1512 -368"
+}
+// entity 28
+{
+"classname" "player_ai"
+"origin" "-2608 -1672 -368"
+}
+// entity 29
+{
+"classname" "player_ai"
+"origin" "-2992 -1976 -368"
 }

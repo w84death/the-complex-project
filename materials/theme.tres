@@ -45,6 +45,7 @@ anti_aliasing = false
 [sub_resource type="DynamicFont" id=4]
 size = 12
 use_mipmaps = true
+use_filter = true
 extra_spacing_char = 3
 font_data = ExtResource( 1 )
 
